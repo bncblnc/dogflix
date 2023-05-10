@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { blackColorDark } from "../UI/variables";
 import { ReactComponent as AluraLogo } from "../../assets/images/logo.svg";
-import { Button } from "../Button";
+import { ButtonSecondary } from "../Button";
 
 const StyledHeader = styled.header`
   background-color: ${blackColorDark};
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Logo />
-      <Button>Novo vídeo</Button>
+      <ButtonSecondary>Novo vídeo</ButtonSecondary>
     </StyledHeader>
   );
 };

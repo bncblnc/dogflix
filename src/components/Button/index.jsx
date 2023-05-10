@@ -1,16 +1,36 @@
 import styled from "styled-components";
-import { grayColorLight, primaryColor } from "../UI/variables";
+import {
+  blackColorDark,
+  blackColorLighter,
+  grayColorLight,
+  primaryColor,
+} from "../UI/variables";
 
 export const Button = styled.button`
   font-weight: 600;
   font-size: 2.1rem;
-  color: #fff;
   padding: 1.5rem 3rem;
-  border: 1px solid ${grayColorLight};
   border-radius: 0.4rem;
   background-color: transparent;
   transition: all 0.3s;
   cursor: pointer;
+`;
+
+export const ButtonPrimary = styled(Button)`
+  border: none;
+  background-color: ${(props) =>
+    props.primary ? primaryColor : blackColorLighter};
+  color: ${(props) => (props.primary ? "#fff" : blackColorDark)};
+
+  :hover {
+    opacity: 0.85;
+  }
+`;
+
+export const ButtonSecondary = styled(Button)`
+  color: #fff;
+  border: 1px solid ${grayColorLight};
+  background-color: transparent;
 
   :hover {
     color: ${primaryColor};
