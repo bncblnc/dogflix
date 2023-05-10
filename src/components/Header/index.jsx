@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { blackColorDark } from "../UI/variables";
 import { ReactComponent as AluraLogo } from "../../assets/images/logo.svg";
+import { Button } from "../Button";
 
 const StyledHeader = styled.header`
   background-color: ${blackColorDark};
@@ -14,14 +15,14 @@ const StyledHeader = styled.header`
 
 const Logo = styled(AluraLogo)`
   height: 100%;
-  flex-basis: min-content;
+  flex: 0 0 min-content;
 `;
 
 const Header = () => {
   return (
     <StyledHeader>
       <Logo />
-      <div>Botao</div>
+      <Button>Novo vídeo</Button>
     </StyledHeader>
   );
 };
