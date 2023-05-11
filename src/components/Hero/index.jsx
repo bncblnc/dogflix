@@ -5,7 +5,7 @@ import { courseColor1, grayColorLight } from "../UI/variables";
 import { TitleCategoryLarge } from "../TitleCategory";
 
 const StyledHero = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(${img});
@@ -41,26 +41,22 @@ const ImgHero = styled.img`
 
 const Hero = () => {
   return (
-    <>
-      <StyledHero>
-        <Container>
-          <TitleCategoryLarge color={courseColor1}>
-            Front End
-          </TitleCategoryLarge>
-          <Info>
-            <h1>SEO com React</h1>
-            <p>
-              Esse desafio é uma forma de aprendizado. É um mecanismo onde você
-              pode se engajar na resolução de um problema para poder aplicar
-              todo o conhecimento adquirido na Formação React.
-            </p>
-          </Info>
-        </Container>
-        <Container>
-          <ImgHero src={img} alt="Vídeo Transformação Digital" />
-        </Container>
-      </StyledHero>
-    </>
+    <StyledHero>
+      <Container>
+        <TitleCategoryLarge color={courseColor1}>Front End</TitleCategoryLarge>
+        <Info>
+          <h1>SEO com React</h1>
+          <p>
+            Esse desafio é uma forma de aprendizado. É um mecanismo onde você
+            pode se engajar na resolução de um problema para poder aplicar todo
+            o conhecimento adquirido na Formação React.
+          </p>
+        </Info>
+      </Container>
+      <Container>
+        <ImgHero src={img} alt="Vídeo Transformação Digital" />
+      </Container>
+    </StyledHero>
   );
 };
 
