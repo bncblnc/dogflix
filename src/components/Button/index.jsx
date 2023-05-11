@@ -13,6 +13,7 @@ export const Button = styled.button`
   border-radius: 0.4rem;
   background-color: transparent;
   transition: all 0.3s;
+  font-family: "Source Sans Pro", sans-serif;
   cursor: pointer;
 `;
 
