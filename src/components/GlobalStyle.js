@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { blackColorDark } from "./UI/variables";
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -10,4 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
 }
 
+body{
+    background-color: ${blackColorDark};
+}
 `;

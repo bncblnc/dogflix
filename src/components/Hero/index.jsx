@@ -6,13 +6,14 @@ import { TitleCategoryLarge } from "../TitleCategory";
 
 const StyledHero = styled.div`
   width: 100vw;
-  height: calc(100vh - 9.4rem);
+  height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(${img});
+
   background-size: cover;
   display: flex;
-  align-items: center;
   padding: 4.7rem;
+  align-items: center;
 `;
 
 const Container = styled.div`

@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { blackColorDark } from "../UI/variables";
 import { ReactComponent as AluraLogo } from "../../assets/images/logo.svg";
 import { ButtonSecondary } from "../Button";
 
 const StyledHeader = styled.header`
-  background-color: ${blackColorDark};
+  background-color: #000;
   display: flex;
   justify-content: space-between;
   padding: 2.7rem 4rem;
