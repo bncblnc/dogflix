@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <>
       <StyledHeader>
-        <Logo />
+        <Logo alt="Logo AluraFlix" />
         <ButtonSecondary>Novo vídeo</ButtonSecondary>
       </StyledHeader>
       <MarginLine />
