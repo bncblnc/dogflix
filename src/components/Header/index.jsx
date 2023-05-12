@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as AluraLogo } from "../../assets/images/logo.svg";
 import { ButtonSecondary } from "../Button";
 import { MarginLine } from "../UI";
+import { NavLink } from "react-router-dom";
 
 const StyledHeader = styled.header`
   background-color: #000;
@@ -18,6 +19,13 @@ const Logo = styled(AluraLogo)`
   flex: 0 0 min-content;
 `;
 
+const LogoLink = styled(NavLink)`
+  height: 100%;
+  width: 0;
+  display: flex;
+  background-color: red;
+`;
+
 const Nav = styled.nav`
   display: flex;
   gap: 2rem;
@@ -27,10 +35,13 @@ const Header = () => {
   return (
     <>
       <StyledHeader>
-        <Logo alt="Logo AluraFlix" />
+        <LogoLink to="/">
+          <Logo alt="Logo AluraFlix" />
+        </LogoLink>
+
         <Nav>
-          <ButtonSecondary>Novo vídeo</ButtonSecondary>
-          <ButtonSecondary>Nova categoria</ButtonSecondary>
+          <ButtonSecondary to="newvideo">Novo vídeo</ButtonSecondary>
+          <ButtonSecondary to="newcategory">Nova categoria</ButtonSecondary>
         </Nav>
       </StyledHeader>
       <MarginLine />
