@@ -18,12 +18,20 @@ const Logo = styled(AluraLogo)`
   flex: 0 0 min-content;
 `;
 
+const Nav = styled.nav`
+  display: flex;
+  gap: 2rem;
+`;
+
 const Header = () => {
   return (
     <>
       <StyledHeader>
         <Logo alt="Logo AluraFlix" />
-        <ButtonSecondary>Novo vídeo</ButtonSecondary>
+        <Nav>
+          <ButtonSecondary>Novo vídeo</ButtonSecondary>
+          <ButtonSecondary>Nova categoria</ButtonSecondary>
+        </Nav>
       </StyledHeader>
       <MarginLine />
     </>
