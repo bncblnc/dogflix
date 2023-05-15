@@ -52,28 +52,16 @@ export default class SimpleSlider extends Component {
     return (
       <StyledSlider {...settings}>
         <div>
-          <VideoCard
-            srcVideo="https://www.youtube.com/embed/Kk3vBRqKA2o"
-            color={courseColor2}
-          />
+          <VideoCard idVideo="Kk3vBRqKA2o" color={courseColor2} />
         </div>
         <div>
-          <VideoCard
-            srcVideo="https://www.youtube.com/embed/K-eaT4V8j-w"
-            color={courseColor2}
-          />
+          <VideoCard idVideo="K-eaT4V8j-w" color={courseColor2} />
         </div>
         <div>
-          <VideoCard
-            srcVideo="https://www.youtube.com/embed/qYhixp5qxTc"
-            color={courseColor2}
-          />
+          <VideoCard idVideo="qYhixp5qxTc" color={courseColor2} />
         </div>
         <div>
-          <VideoCard
-            srcVideo="https://www.youtube.com/embed/5b9Z8toVaAU"
-            color={courseColor2}
-          />
+          <VideoCard idVideo="5b9Z8toVaAU" color={courseColor2} />
         </div>
       </StyledSlider>
     );
