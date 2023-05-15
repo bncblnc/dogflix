@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import img from "../../assets/images/hero.png";
 import { courseColor1, grayColorLight } from "../UI/variables";
-import { TitleCategoryLarge } from "../TitleCategory";
+import { SubtitleCategoryLarge, TitleCategoryLarge } from "../TitleCategory";
+import { MarginMedium } from "../UI";
 
 const StyledHero = styled.div`
   width: 100%;
@@ -20,19 +21,11 @@ const Container = styled.div`
   flex: 1;
 `;
 
-const Info = styled.div`
+const Info = styled.p`
   color: ${grayColorLight};
-
-  h1 {
-    font-size: 4.7rem;
-    font-weight: 400;
-  }
-
-  p {
-    font-weight: 300;
-    font-size: 1.9rem;
-    line-height: 2.5rem;
-  }
+  font-weight: 300;
+  font-size: 1.9rem;
+  line-height: 2.5rem;
 `;
 
 const ImgHero = styled.img`
@@ -44,13 +37,12 @@ const Hero = () => {
     <StyledHero>
       <Container>
         <TitleCategoryLarge color={courseColor1}>Front End</TitleCategoryLarge>
+        <MarginMedium />
+        <SubtitleCategoryLarge>SEO com React</SubtitleCategoryLarge>
         <Info>
-          <h1>SEO com React</h1>
-          <p>
-            Esse desafio é uma forma de aprendizado. É um mecanismo onde você
-            pode se engajar na resolução de um problema para poder aplicar todo
-            o conhecimento adquirido na Formação React.
-          </p>
+          Esse desafio é uma forma de aprendizado. É um mecanismo onde você pode
+          se engajar na resolução de um problema para poder aplicar todo o
+          conhecimento adquirido na Formação React.
         </Info>
       </Container>
       <Container>

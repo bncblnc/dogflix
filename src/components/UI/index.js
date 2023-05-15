@@ -6,3 +6,7 @@ export const MarginLine = styled.div`
   height: 0.2rem;
   background-color: ${primaryColor};
 `;
+
+export const MarginMedium = styled.div`
+  margin-bottom: 3rem;
+`;

@@ -8,10 +8,20 @@ export const TitleCategory = styled.h1`
   display: inline-block;
   padding: 1rem 2rem;
   border-radius: 0.4rem;
-  margin-bottom: 3rem;
   background-color: ${(props) => props.color};
 `;
 
 export const TitleCategoryLarge = styled(TitleCategory)`
   font-size: 6rem;
+`;
+
+export const SubtitleCategory = styled.h2`
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: ${grayColorLight};
+`;
+
+export const SubtitleCategoryLarge = styled(SubtitleCategory)`
+  font-size: 4.7rem;
+  font-weight: 400;
 `;
