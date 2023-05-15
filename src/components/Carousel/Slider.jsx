@@ -8,10 +8,6 @@ import "slick-carousel/slick/slick-theme.css";
 import VideoCard from "./VideoCard";
 import { courseColor2 } from "../UI/variables";
 
-import img1 from "../../assets/images/dataScience01.png";
-import img2 from "../../assets/images/dataScience02.png";
-import img3 from "../../assets/images/dataScience03.png";
-
 const StyledSlider = styled(Slider)`
   width: 90%;
   margin: 0 auto;
@@ -57,29 +53,25 @@ export default class SimpleSlider extends Component {
       <StyledSlider {...settings}>
         <div>
           <VideoCard
-            image={img1}
-            imgAlt="Inteligência Artificial Poderosa"
+            srcVideo="https://www.youtube.com/embed/Kk3vBRqKA2o"
             color={courseColor2}
           />
         </div>
         <div>
           <VideoCard
-            image={img2}
-            imgAlt="Universo Data Science"
+            srcVideo="https://www.youtube.com/embed/K-eaT4V8j-w"
             color={courseColor2}
           />
         </div>
         <div>
           <VideoCard
-            image={img3}
-            imgAlt="Aplicações de Machine Learning"
+            srcVideo="https://www.youtube.com/embed/qYhixp5qxTc"
             color={courseColor2}
           />
         </div>
         <div>
           <VideoCard
-            image={img3}
-            imgAlt="Aplicações de Machine Learning"
+            srcVideo="https://www.youtube.com/embed/5b9Z8toVaAU"
             color={courseColor2}
           />
         </div>
