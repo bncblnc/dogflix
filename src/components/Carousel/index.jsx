@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { SubtitleCategory, TitleCategory } from "../TitleCategory";
-import { courseColor2 } from "../UI/variables";
 import SimpleSlider from "./Slider";
 
 const Container = styled.div`
@@ -17,14 +16,14 @@ const Container = styled.div`
   gap: 2rem;
 `;
 
-const Carousel = () => {
+const Carousel = (props) => {
   return (
     <>
       <Container>
-        <TitleCategory color={courseColor2}> Data Science</TitleCategory>
-        <SubtitleCategory>Formação Data Science na Alura</SubtitleCategory>
+        <TitleCategory color={props.color}>{props.category}</TitleCategory>
+        <SubtitleCategory>{props.subtitle}</SubtitleCategory>
       </Container>
-      <SimpleSlider />
+      <SimpleSlider color={props.color} videos={props.videos} />
     </>
   );
 };
