@@ -13,18 +13,17 @@ export default function Home() {
         color={initialData[0].color}
         videos={initialData[0].videos}
       />
-      <Carousel
-        category={initialData[1].category}
-        subtitle={initialData[1].subtitle}
-        color={initialData[1].color}
-        videos={initialData[1].videos}
-      />
-      <Carousel
-        category={initialData[2].category}
-        subtitle={initialData[2].subtitle}
-        color={initialData[2].color}
-        videos={initialData[2].videos}
-      />
+      {initialData.slice(1).map((data) => {
+        return (
+          <Carousel
+            category={data.category}
+            subtitle={data.subtitle}
+            color={data.color}
+            videos={data.videos}
+          />
+        );
+      })}
+
       <MarginMedium />
     </>
   );

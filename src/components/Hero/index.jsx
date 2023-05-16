@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 import { grayColorLight } from "../UI/variables";
 import { SubtitleCategoryLarge, TitleCategoryLarge } from "../TitleCategory";
-import { CardLarge, MarginMedium } from "../UI";
+import { MarginMedium } from "../UI";
 import SimpleSlider from "../Carousel/Slider";
+import VideoCard from "../Carousel/VideoCard";
 
 const StyledHero = styled.div`
   width: 100%;
@@ -35,20 +36,10 @@ const Info = styled.p`
   line-height: 2.5rem;
 `;
 
-function styleCard(color) {
-  return {
-    borderColor: `${color}`,
-    gridColumn: 2,
-    gridRow: "2 / 3",
-    zIndex: 3,
-  };
-}
-
 const VideoIframe = styled.iframe`
   grid-column: 1 / -1;
   grid-row: 1 / 4;
   z-index: 1;
-
   opacity: 0.3;
   width: 100%;
   height: 100%;
@@ -56,8 +47,6 @@ const VideoIframe = styled.iframe`
 `;
 
 const Hero = ({ category, subtitle, description, color, videos }) => {
-  const srcImg = `https://img.youtube.com/vi/${videos[0]}/0.jpg`;
-
   return (
     <StyledHero>
       <VideoIframe
@@ -69,7 +58,7 @@ const Hero = ({ category, subtitle, description, color, videos }) => {
         <SubtitleCategoryLarge>{subtitle}</SubtitleCategoryLarge>
         <Info>{description}</Info>
       </Container>
-      <CardLarge src={srcImg} style={styleCard(color)} />
+      <VideoCard idVideo={videos[0]} large={true} color={color} />
       <SliderStyle>
         <SimpleSlider color={color} videos={videos.slice(1)} />
       </SliderStyle>
