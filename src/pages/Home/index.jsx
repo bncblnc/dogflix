@@ -37,7 +37,13 @@ const initialData = [
     description:
       "Esse desafio é uma forma de aprendizado. É um mecanismo onde você pode se engajar na resolução de um problema para poder aplicar todo o conhecimento adquirido na Formação React.",
     color: "#6BD1FF",
-    videos: ["6IuQUgeDPg0", "KdQa4Rd6K1A", "35jb4FeQSe4", "2-OAUXA4IcE"],
+    videos: [
+      "Z-N5Fr9P-GU",
+      "6IuQUgeDPg0",
+      "KdQa4Rd6K1A",
+      "35jb4FeQSe4",
+      "2-OAUXA4IcE",
+    ],
   },
   {
     category: "Data Science",
