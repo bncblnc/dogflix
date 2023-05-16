@@ -50,9 +50,9 @@ export default function SimpleSlider({ videos, color }) {
 
   return (
     <StyledSlider {...settings}>
-      {videos.map((video) => {
+      {videos.map((video, index) => {
         return (
-          <div>
+          <div key={index}>
             <VideoCard idVideo={video} color={color} />
           </div>
         );

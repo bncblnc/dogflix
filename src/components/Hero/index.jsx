@@ -11,13 +11,13 @@ const StyledHero = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 2fr 1fr 1fr;
+  grid-template-rows: 0.7fr 2fr 0.4fr 1fr 1fr;
   align-items: center;
-  gap: 4rem;
+  gap: 0 4rem;
 `;
 
 const Container = styled.div`
-  padding: 0 4.7rem;
+  padding: 0 5rem;
   grid-column: 1;
   grid-row: 2 / 3;
   z-index: 3;
@@ -25,7 +25,7 @@ const Container = styled.div`
 
 const SliderStyle = styled.div`
   grid-column: 1 /-1;
-  grid-row: 3 / 5;
+  grid-row: 4 / 6;
   z-index: 3;
 `;
 
@@ -37,8 +37,9 @@ const Info = styled.p`
 `;
 
 const VideoIframe = styled.iframe`
+  border: none;
   grid-column: 1 / -1;
-  grid-row: 1 / 4;
+  grid-row: 1 / 5;
   z-index: 1;
   opacity: 0.3;
   width: 100%;
