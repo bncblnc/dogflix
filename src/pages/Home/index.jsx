@@ -6,10 +6,10 @@ import { MarginMedium } from "../../components/UI";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Carousel
+      <Hero
         category={initialData[0].category}
         subtitle={initialData[0].subtitle}
+        description={initialData[0].description}
         color={initialData[0].color}
         videos={initialData[0].videos}
       />
@@ -19,12 +19,26 @@ export default function Home() {
         color={initialData[1].color}
         videos={initialData[1].videos}
       />
+      <Carousel
+        category={initialData[2].category}
+        subtitle={initialData[2].subtitle}
+        color={initialData[2].color}
+        videos={initialData[2].videos}
+      />
       <MarginMedium />
     </>
   );
 }
 
 const initialData = [
+  {
+    category: "Front End",
+    subtitle: "SEO com React",
+    description:
+      "Esse desafio é uma forma de aprendizado. É um mecanismo onde você pode se engajar na resolução de um problema para poder aplicar todo o conhecimento adquirido na Formação React.",
+    color: "#6BD1FF",
+    videos: ["6IuQUgeDPg0", "KdQa4Rd6K1A", "35jb4FeQSe4", "2-OAUXA4IcE"],
+  },
   {
     category: "Data Science",
     subtitle: "Formação Data Science na Alura",

@@ -1,14 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-
-const Card = styled.img`
-width: 432px;
-height: 246px;
-border-radius: 0.5rem;
-border: 0.4rem solid;
-cursor pointer;
-object-fit: cover;
-`;
+import { Card } from "../UI";
 
 const VideoCard = ({ idVideo, color }) => {
   const srcImg = `https://img.youtube.com/vi/${idVideo}/0.jpg`;

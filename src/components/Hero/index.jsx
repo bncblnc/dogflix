@@ -1,24 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import img from "../../assets/images/hero.png";
-import { courseColor1, grayColorLight } from "../UI/variables";
+import { grayColorLight } from "../UI/variables";
 import { SubtitleCategoryLarge, TitleCategoryLarge } from "../TitleCategory";
-import { MarginMedium } from "../UI";
+import { CardLarge, MarginMedium } from "../UI";
+import SimpleSlider from "../Carousel/Slider";
 
 const StyledHero = styled.div`
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(${img});
-
-  background-size: cover;
-  display: flex;
-  padding: 4.7rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2.5fr 1fr;
   align-items: center;
+  gap: 4.7rem;
 `;
 
 const Container = styled.div`
-  flex: 1;
+  padding: 0 4.7rem;
+`;
+
+const WholeRow = styled.div`
+  grid-column: 1 /-1;
 `;
 
 const Info = styled.p`
@@ -28,26 +29,30 @@ const Info = styled.p`
   line-height: 2.5rem;
 `;
 
-const ImgHero = styled.img`
-  width: 100%;
-`;
+function styleBgImg(img) {
+  return {
+    background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(${img})`,
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+  };
+}
 
-const Hero = () => {
+const Hero = ({ category, subtitle, description, color, videos }) => {
+  const srcImg = `https://img.youtube.com/vi/${videos[0]}/0.jpg`;
+
   return (
-    <StyledHero>
+    <StyledHero style={styleBgImg(srcImg)}>
       <Container>
-        <TitleCategoryLarge color={courseColor1}>Front End</TitleCategoryLarge>
+        <TitleCategoryLarge color={color}>{category}</TitleCategoryLarge>
         <MarginMedium />
-        <SubtitleCategoryLarge>SEO com React</SubtitleCategoryLarge>
-        <Info>
-          Esse desafio é uma forma de aprendizado. É um mecanismo onde você pode
-          se engajar na resolução de um problema para poder aplicar todo o
-          conhecimento adquirido na Formação React.
-        </Info>
+        <SubtitleCategoryLarge>{subtitle}</SubtitleCategoryLarge>
+        <Info>{description}</Info>
       </Container>
-      <Container>
-        <ImgHero src={img} alt="Vídeo Transformação Digital" />
-      </Container>
+      <CardLarge src={srcImg} style={{ borderColor: color }} />
+      <WholeRow>
+        <SimpleSlider color={color} videos={videos.slice(1)} />
+      </WholeRow>
     </StyledHero>
   );
 };
