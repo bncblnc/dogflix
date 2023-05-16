@@ -1,27 +1,88 @@
 [
   {
     "category": "Front End",
-    "subtitle": "SEO com React",
-    "description": "Esse desafio é uma forma de aprendizado. É um mecanismo onde você pode se engajar na resolução de um problema para poder aplicar todo o conhecimento adquirido na Formação React.",
+    "subtitle": "Formação Front End na Alura",
     "color": "#6BD1FF",
     "videos": [
-      "Z-N5Fr9P-GU",
-      "6IuQUgeDPg0",
-      "KdQa4Rd6K1A",
-      "35jb4FeQSe4",
-      "2-OAUXA4IcE"
+      {
+        "id": "Z-N5Fr9P-GU",
+        "title": "Transformação Digital",
+        "description": "Entenda o que é Transformação Digital, quais os caminhos a se evitar e qual deve ser o seu objetivo para começar a fazer uma transformação digital na sua empresa."
+      },
+      {
+        "id": "6IuQUgeDPg0",
+        "title": "O que é React JS?",
+        "description": "Afinal, o que é React JS? Neste vídeo, Vanessa Tonini e Mario Souto explicam isto para você falando sobre como esta ferramenta surgiu, para que ela serve, quais são suas aplicações e relação com outras ferramentas e como começar a trabalhar com ele. "
+      },
+      {
+        "id": "KdQa4Rd6K1A",
+        "title": "useState: aprenda o React Hook",
+        "description": "Entenda neste tutorial de Hooks React, sobre o que é o useState e porque usá-lo é importante para buscar dados, atualizar estados e renderizar a sua aplicação. Aprenda a como usar o useState na prática e com diferentes soluções para resolver exemplos do dia a dia."
+      },
+      {
+        "id": "35jb4FeQSe4",
+        "title": "Como começar com React?",
+        "description": "Aprenda como começar a programar com React."
+      },
+      {
+        "id": "2-OAUXA4IcE",
+        "title": "Diferenças entre React e React Native",
+        "description": "Neste vídeo, o Luiz Fernando e a Natália Thiel, Instrutor e Instrutora aqui na Alura, falam um pouco mais sobre as diferencias e similaridades do React JS e o React Native e como é usar ambas as ferramentas em seu projeto mobile."
+      }
     ]
   },
   {
     "category": "Data Science",
     "subtitle": "Formação Data Science na Alura",
     "color": "#69953B",
-    "videos": ["Kk3vBRqKA2o", "K-eaT4V8j-w", "qYhixp5qxTc", "5b9Z8toVaAU"]
+    "videos": [
+      {
+        "id": "Kk3vBRqKA2o",
+        "title": "Inteligência artificial",
+        "description": "Inteligência Artificial ainda é um assunto muito discutido em diversas áreas: tecnologia, ética, religião… e muito ainda se especula sobre seus limites e o que pode se tornar no futuro e neste #HipstersPontoTube o host Paulo Silveira bate um papo com Guilherme Silveira sobre esse assunto polêmico."
+      },
+      {
+        "id": "K-eaT4V8j-w",
+        "title": "Data Science: por onde eu começo?",
+        "description": "Nesse primeiro episódio de 'Universo Data Science' vamos descobrir como a ideia da ciência de dados surgiu e acompanhar a sua evolução, dos anos 80 até hoje e sua aplicação na atualidade."
+      },
+      {
+        "id": "qYhixp5qxTc",
+        "title": "Aplicações de Machine Learning",
+        "description": "Você sabia que o Machine Learning tem aplicações onde você nem imagina?"
+      },
+      {
+        "id": "5b9Z8toVaAU",
+        "title": "O que é Data Science?",
+        "description": "Python é o novo Excel? Para que serve o R, Pandas e Jupyter? E qual é, afinal, a diferença entre o Data Science, Business Intelligence e Machine Learning? Descubra no primeiro episódio de Hipsters Ponto Tube!"
+      }
+    ]
   },
   {
     "category": "Mobile",
     "subtitle": "Formação Mobile da Alura",
     "color": "#FFBA05",
-    "videos": ["4AH9H_dx_7g", "uXA8jLSuPNA", "ly8e6WB0YQo", "fWscDFHKgw8"]
+    "videos": [
+      {
+        "id": "4AH9H_dx_7g",
+        "title": "Dev IOS",
+        "description": "Quais os próximos passos? Quais os padrões de projeto? A Giovanna Moeller conta sua experiência para o Mario Souto em um bate papo super legal sobre seu desenvolvimento na área de mobile e iOS."
+      },
+      {
+        "id": "uXA8jLSuPNA",
+        "title": "Temas e cores no SwiftUI",
+        "description": "Giovanna Moeller, Instrutora da Escola de Mobile da Alura, vai ensinar você a criar temas e estilos de cores no Swift!"
+      },
+      {
+        "id": "ly8e6WB0YQo",
+        "title": "De Views para Jetpack Compose",
+        "description": "Aprenda nesse tutorial como fazer a integração e a migração de projetos (apps) que utilizam sistemas de views  para o Jetpack Compose."
+      },
+      {
+        "id": "fWscDFHKgw8",
+        "title": "Desenvolvimento Android",
+        "description": "Um episódio focado no desenvolvimento de aplicações Android. Neste bate-papo, Paulo Silveira e Felipe Torres conversam sobre os primeiros passos para começar a desenvolver, quais as principais ferramentas do desenvolvimento mobile, como colocar sua aplicação no ar e mais!"
+      }
+    ]
   }
 ]

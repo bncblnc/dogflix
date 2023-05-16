@@ -53,7 +53,7 @@ export default function SimpleSlider({ videos, color }) {
       {videos.map((video, index) => {
         return (
           <div key={index}>
-            <VideoCard idVideo={video} color={color} />
+            <VideoCard idVideo={video.id} color={color} />
           </div>
         );
       })}

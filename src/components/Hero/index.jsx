@@ -51,15 +51,15 @@ const Hero = ({ category, subtitle, description, color, videos }) => {
   return (
     <StyledHero>
       <VideoIframe
-        src={`https://www.youtube.com/embed/${videos[0]}?&autoplay=1&mute=1&playsinline=1`}
+        src={`https://www.youtube.com/embed/${videos[0].id}?&autoplay=1&mute=1&playsinline=1`}
       ></VideoIframe>
       <Container>
         <TitleCategoryLarge color={color}>{category}</TitleCategoryLarge>
         <MarginMedium />
-        <SubtitleCategoryLarge>{subtitle}</SubtitleCategoryLarge>
-        <Info>{description}</Info>
+        <SubtitleCategoryLarge>{videos[0].title}</SubtitleCategoryLarge>
+        <Info>{videos[0].description}</Info>
       </Container>
-      <VideoCard idVideo={videos[0]} large={true} color={color} />
+      <VideoCard idVideo={videos[0].id} large={true} color={color} />
       <SliderStyle>
         <SimpleSlider color={color} videos={videos.slice(1)} />
       </SliderStyle>
