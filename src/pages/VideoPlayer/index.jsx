@@ -2,8 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import initialData from "../../data/initial-data.json";
-import { TitleCategory } from "../../components/TitleCategory";
 import ReactPlayer from "react-player";
+import NotFound from "../NotFound";
 
 function getVideoId(parameters) {
   const category = initialData.filter(
@@ -25,7 +25,7 @@ const VideoPlayer = () => {
   const videoId = getVideoId(parameters);
 
   if (!videoId) {
-    return <TitleCategory color="red">Não encontrada</TitleCategory>;
+    return <NotFound />;
   }
 
   return (

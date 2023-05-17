@@ -8,6 +8,7 @@ import NewCategory from "./pages/NewCategory";
 import VideoPlayer from "./pages/VideoPlayer";
 import Base from "./pages/Base";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         </Route>
 
         <Route path=":category/:id/*" element={<VideoPlayer />} />
-        <Route path="*" element={<div>NÃO ENCONTRADA</div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
