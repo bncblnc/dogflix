@@ -6,11 +6,10 @@ import initialData from "../../data/initial-data.json";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero
         category={initialData[0].category}
-        subtitle={initialData[0].subtitle}
-        description={initialData[0].description}
+        url={initialData[0].url}
         color={initialData[0].color}
         videos={initialData[0].videos}
       />
@@ -19,6 +18,7 @@ export default function Home() {
           <Carousel
             key={index}
             category={data.category}
+            url={data.url}
             subtitle={data.subtitle}
             color={data.color}
             videos={data.videos}
@@ -27,6 +27,6 @@ export default function Home() {
       })}
 
       <MarginMedium />
-    </>
+    </main>
   );
 }

@@ -1,38 +1,43 @@
 import React from "react";
-import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
 import initialData from "../../data/initial-data.json";
 import { TitleCategory } from "../../components/TitleCategory";
 import ReactPlayer from "react-player";
 
-const VideoIframe = styled.iframe`
-  border: none;
-  width: 100vw;
-  height: 100vh;
-`;
+function getVideoId(parameters) {
+  const category = initialData.filter(
+    (data) => data.url === parameters.category
+  )[0];
+
+  if (!category) return false;
+
+  const video = category.videos.filter(
+    (video) => video.id === parameters.id
+  )[0];
+
+  if (video) return video.id;
+  else return false;
+}
 
 const VideoPlayer = () => {
   const parameters = useParams();
-  const video = initialData
-    .filter(
-      (data) =>
-        data.category.replace(/\s/g, "").toLowerCase() === parameters.category
-    )[0]
-    .videos.filter((video) => video.id === parameters.id)[0];
+  const videoId = getVideoId(parameters);
 
-  if (!video) {
+  if (!videoId) {
     return <TitleCategory color="red">Não encontrada</TitleCategory>;
   }
 
   return (
-    <ReactPlayer
-      url={`https://www.youtube.com/watch?v=${video.id}`}
-      playing={true}
-      controls={true}
-      width="100%"
-      height="65vh"
-    />
+    <main>
+      <ReactPlayer
+        url={`https://www.youtube.com/watch?v=${videoId}`}
+        playing={true}
+        controls={true}
+        width="100%"
+        height="calc(100vh - 7.5rem)"
+      />
+    </main>
   );
 };
 

@@ -1,21 +1,30 @@
 import React from "react";
 import { Card, CardLarge } from "../UI";
+import { Link } from "react-router-dom";
 
-function styleCardLarge(color) {
+function styleLinkLarge() {
   return {
-    borderColor: `${color}`,
     gridColumn: 2,
     gridRow: "2 / 3",
     zIndex: 3,
   };
 }
 
-const VideoCard = ({ idVideo, color, large = false }) => {
+const VideoCard = ({ url, idVideo, color, large = false }) => {
   const srcImg = `https://img.youtube.com/vi/${idVideo}/0.jpg`;
+
   if (!large) {
-    return <Card src={srcImg} style={{ borderColor: color }} />;
+    return (
+      <Link to={`/${url}/${idVideo}`}>
+        <Card src={srcImg} style={{ borderColor: color }} />
+      </Link>
+    );
   } else {
-    return <CardLarge src={srcImg} style={styleCardLarge(color)} />;
+    return (
+      <Link to={`/${url}/${idVideo}`} style={styleLinkLarge()}>
+        <CardLarge src={srcImg} style={{ borderColor: color }} />;
+      </Link>
+    );
   }
 };
 

@@ -1,6 +1,7 @@
 [
   {
     "category": "Front End",
+    "url": "frontend",
     "subtitle": "Formação Front End na Alura",
     "color": "#6BD1FF",
     "videos": [
@@ -33,6 +34,7 @@
   },
   {
     "category": "Data Science",
+    "url": "datascience",
     "subtitle": "Formação Data Science na Alura",
     "color": "#69953B",
     "videos": [
@@ -60,6 +62,7 @@
   },
   {
     "category": "Mobile",
+    "url": "mobile",
     "subtitle": "Formação Mobile da Alura",
     "color": "#FFBA05",
     "videos": [

@@ -23,7 +23,7 @@ const Carousel = (props) => {
         <TitleCategory color={props.color}>{props.category}</TitleCategory>
         <SubtitleCategory>{props.subtitle}</SubtitleCategory>
       </Container>
-      <SimpleSlider color={props.color} videos={props.videos} />
+      <SimpleSlider url={props.url} color={props.color} videos={props.videos} />
     </>
   );
 };

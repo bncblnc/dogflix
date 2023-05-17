@@ -47,7 +47,7 @@ const VideoIframe = styled.iframe`
   pointer-events: none;
 `;
 
-const Hero = ({ category, subtitle, description, color, videos }) => {
+const Hero = ({ url, category, color, videos }) => {
   return (
     <StyledHero>
       <VideoIframe
@@ -59,9 +59,9 @@ const Hero = ({ category, subtitle, description, color, videos }) => {
         <SubtitleCategoryLarge>{videos[0].title}</SubtitleCategoryLarge>
         <Info>{videos[0].description}</Info>
       </Container>
-      <VideoCard idVideo={videos[0].id} large={true} color={color} />
+      <VideoCard url={url} idVideo={videos[0].id} large={true} color={color} />
       <SliderStyle>
-        <SimpleSlider color={color} videos={videos.slice(1)} />
+        <SimpleSlider url={url} color={color} videos={videos.slice(1)} />
       </SliderStyle>
     </StyledHero>
   );
