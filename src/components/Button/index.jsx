@@ -5,9 +5,8 @@ import {
   grayColorLight,
   primaryColor,
 } from "../UI/variables";
-import { NavLink } from "react-router-dom";
 
-export const Button = styled(NavLink)`
+export const Button = styled.button`
   font-weight: 600;
   font-size: 2.1rem;
   padding: 1.5rem 3rem;

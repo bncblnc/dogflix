@@ -19,8 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Base />}>
           <Route path="/" element={<Home />} />
-          <Route path="newvideo" element={<NewVideo />} />
-          <Route path="newcategory" element={<NewCategory />} />
+          <Route path="novovideo" element={<NewVideo />} />
+          <Route path="novacategoria" element={<NewCategory />} />
         </Route>
 
         <Route path=":category/:id/*" element={<VideoPlayer />} />

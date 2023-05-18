@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ButtonSecondary } from "../Button";
 import { MarginLine } from "../UI";
 import LogoLink from "../LogoLink";
+import { NavLink } from "react-router-dom";
 
 const StyledHeader = styled.header`
   background-color: #000;
@@ -26,8 +27,12 @@ const Header = () => {
         <LogoLink />
 
         <Nav>
-          <ButtonSecondary to="newvideo">Novo vídeo</ButtonSecondary>
-          <ButtonSecondary to="newcategory">Nova categoria</ButtonSecondary>
+          <NavLink to="novovideo">
+            <ButtonSecondary>Novo vídeo</ButtonSecondary>
+          </NavLink>
+          <NavLink to="novacategoria">
+            <ButtonSecondary>Nova categoria</ButtonSecondary>
+          </NavLink>
         </Nav>
       </StyledHeader>
       <MarginLine />
