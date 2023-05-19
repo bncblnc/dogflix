@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { FormStyled, TitleForm } from "../../components/Form";
 import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
-import { ButtonPrimary } from "../../components/Button";
 import ColorInput from "../../components/Form/ColorInput";
+import ButtonsForm from "../../components/Form/ButtonsForm";
 
 export default function NewCategory() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("#000000");
 
   return (
     <main>
@@ -35,9 +35,7 @@ export default function NewCategory() {
           setFunction={setDescription}
         />
 
-        <ButtonPrimary type="submit" primary>
-          Salvar
-        </ButtonPrimary>
+        <ButtonsForm />
       </FormStyled>
     </main>
   );

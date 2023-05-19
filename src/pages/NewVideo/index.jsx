@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { FormStyled, TitleForm } from "../../components/Form";
 import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
-import { ButtonPrimary } from "../../components/Button";
 import Select from "../../components/Form/SelectInput";
 
 import initialData from "../../data/initial-data.json";
+import ButtonsForm from "../../components/Form/ButtonsForm";
 
 export default function NewVideo() {
   const [title, setTitle] = useState("");
@@ -49,9 +49,7 @@ export default function NewVideo() {
           setFunction={setDescription}
         />
 
-        <ButtonPrimary type="submit" primary>
-          Salvar
-        </ButtonPrimary>
+        <ButtonsForm />
       </FormStyled>
     </main>
   );
