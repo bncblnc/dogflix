@@ -13,11 +13,6 @@ export default function NewVideo() {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
 
-  function getOptions() {
-    const options = initialData.map((data) => ({ [data.url]: data.category }));
-    return options;
-  }
-
   return (
     <main>
       <FormStyled
@@ -41,8 +36,9 @@ export default function NewVideo() {
         />
         <Select
           name="category"
+          label="Categoria"
           value={category}
-          options={getOptions()}
+          options={initialData.map((data) => data.category)}
           setFunction={setCategory}
         />
 

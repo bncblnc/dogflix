@@ -5,13 +5,13 @@ import {
   Bar,
   FieldContainer,
   StyledLabel,
-  fieldAnimation,
   fieldStyled,
+  textFieldAnimation,
 } from ".";
 
 const StyledInput = styled.input`
   ${fieldStyled};
-  ${fieldAnimation};
+  ${textFieldAnimation};
 `;
 
 export default function TextSmall({ label, type, value, setFunction }) {

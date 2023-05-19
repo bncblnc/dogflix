@@ -14,6 +14,7 @@ export const TitleForm = styled.h1`
 
 export const FormStyled = styled.form`
   max-width: 100rem;
+  min-height: calc(100vh - 22rem);
   margin: 2rem auto;
   padding: 1.5rem;
   display: flex;
@@ -31,21 +32,30 @@ export const fieldStyled = () => `
   width: 100%;
   border: none;
   border-bottom: 1px solid #757575;
+  border-radius:2px;
 
-  &:focus {
+  :focus {
     outline: none;
   }
 `;
 
-export const fieldAnimation = () => `
-  &:focus ~ label,
-  &:valid ~ label {
-   top: -2rem;
-   font-size: 1.4rem;
-   color: ${primaryColor};
+export const selectFieldAnimation = () => `
+  :valid ~ label{
+    top: -2rem;
+    font-size: 1.4rem;
+    color: ${primaryColor};
+  }
+`;
+
+export const textFieldAnimation = () => `
+  :focus ~ label,
+  :valid ~ label {
+    top: -2rem;
+    font-size: 1.4rem;
+    color: ${primaryColor};
   }
 
-  &:focus ~ ${Bar}:before, &:focus ~ ${Bar}:after {
+  :focus ~ ${Bar}:before, &:focus ~ ${Bar}:after {
    width: 100%;
   }
 `;
@@ -55,8 +65,8 @@ export const Bar = styled.span`
   display: block;
   width: 100%;
 
-  &:before,
-  &:after {
+  :before,
+  :after {
     content: "";
     height: 0.2rem;
     width: 0;

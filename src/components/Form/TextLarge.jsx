@@ -5,13 +5,13 @@ import {
   Bar,
   FieldContainer,
   StyledLabel,
-  fieldAnimation,
   fieldStyled,
+  textFieldAnimation,
 } from ".";
 
 const StyledTextarea = styled.textarea`
   ${fieldStyled};
-  ${fieldAnimation};
+  ${textFieldAnimation};
   resize: none;
 `;
 
