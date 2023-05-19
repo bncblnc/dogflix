@@ -4,6 +4,7 @@ import { FormStyled, TitleForm } from "../../components/Form";
 import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
 import { ButtonPrimary } from "../../components/Button";
+import ColorInput from "../../components/Form/ColorInput";
 
 export default function NewCategory() {
   const [name, setName] = useState("");
@@ -15,10 +16,11 @@ export default function NewCategory() {
       <FormStyled
         onSubmit={(evento) => {
           evento.preventDefault();
-          console.log(name, description);
+          console.log(name, color, description);
         }}
       >
         <TitleForm>Nova Categoria</TitleForm>
+        <ColorInput value={color} setFunction={setColor} />
         <TextSmall
           label="Nome"
           type="text"

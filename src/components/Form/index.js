@@ -83,12 +83,12 @@ export const FieldContainer = styled.div`
 `;
 
 export const StyledLabel = styled.label`
-  color: ${grayColorLight};
-  font-size: 1.8rem;
+  color: ${(props) => (props.static ? primaryColor : grayColorLight)};
+  font-size: ${(props) => (props.static ? "1.4rem" : "1.8rem")};
   font-weight: normal;
   position: absolute;
   pointer-events: none;
   left: 0.5rem;
-  top: 1rem;
+  top: ${(props) => (props.static ? "-2rem" : "1rem")};
   transition: 0.2s ease all;
 `;
