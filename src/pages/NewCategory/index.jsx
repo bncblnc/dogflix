@@ -6,6 +6,9 @@ import TextLarge from "../../components/Form/TextLarge";
 import ColorInput from "../../components/Form/ColorInput";
 import ButtonsForm from "../../components/Form/ButtonsForm";
 
+import initialData from "../../data/initial-data.json";
+import Table from "../../components/Table";
+
 export default function NewCategory() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -36,6 +39,7 @@ export default function NewCategory() {
         />
 
         <ButtonsForm />
+        <Table item={initialData} />
       </FormStyled>
     </main>
   );

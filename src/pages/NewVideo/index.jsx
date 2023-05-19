@@ -3,9 +3,9 @@ import { FormStyled, TitleForm } from "../../components/Form";
 import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
 import Select from "../../components/Form/SelectInput";
+import ButtonsForm from "../../components/Form/ButtonsForm";
 
 import initialData from "../../data/initial-data.json";
-import ButtonsForm from "../../components/Form/ButtonsForm";
 
 export default function NewVideo() {
   const [title, setTitle] = useState("");
@@ -29,7 +29,7 @@ export default function NewVideo() {
           setFunction={setTitle}
         />
         <TextSmall
-          label="Link do vídeo no YouTube"
+          label="Link do vídeo"
           type="text"
           value={link}
           setFunction={setLink}
