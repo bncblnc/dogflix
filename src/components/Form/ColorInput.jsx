@@ -6,9 +6,9 @@ import { grayColorInput } from "../UI/variables";
 
 const StyledInput = styled.input`
   background-color: ${grayColorInput};
-  padding: 0.3rem;
-  width: 7rem;
-  height: 5rem;
+  padding: 0 0.3rem;
+  width: 6rem;
+  height: 4.2rem;
 
   border: none;
   border-radius: 2px;

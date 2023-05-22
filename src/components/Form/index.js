@@ -14,7 +14,6 @@ export const TitleForm = styled.h1`
 
 export const FormStyled = styled.form`
   max-width: 100rem;
-  min-height: calc(100vh - 22rem);
   margin: 2rem auto;
   padding: 1.5rem;
   display: flex;

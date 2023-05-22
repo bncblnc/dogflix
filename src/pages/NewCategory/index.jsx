@@ -8,6 +8,15 @@ import ButtonsForm from "../../components/Form/ButtonsForm";
 
 import initialData from "../../data/initial-data.json";
 import CategoriesList from "../../components/CategoriesList";
+import styled from "styled-components";
+
+const Container = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+`;
 
 export default function NewCategory() {
   const [name, setName] = useState("");
@@ -15,7 +24,7 @@ export default function NewCategory() {
   const [color, setColor] = useState("#000000");
 
   return (
-    <main>
+    <main style={{ minHeight: "calc(100vh - 22rem)" }}>
       <FormStyled
         onSubmit={(evento) => {
           evento.preventDefault();
@@ -23,13 +32,15 @@ export default function NewCategory() {
         }}
       >
         <TitleForm>Nova Categoria</TitleForm>
-        <ColorInput value={color} setFunction={setColor} />
-        <TextSmall
-          label="Nome"
-          type="text"
-          value={name}
-          setFunction={setName}
-        />
+        <Container>
+          <TextSmall
+            label="Nome"
+            type="text"
+            value={name}
+            setFunction={setName}
+          />
+          <ColorInput value={color} setFunction={setColor} />
+        </Container>
 
         <TextLarge
           label="Descrição"
