@@ -39,8 +39,9 @@ export default function NewCategory() {
         />
 
         <ButtonsForm />
-        <CategoriesList item={initialData} />
       </FormStyled>
+
+      <CategoriesList item={initialData} />
     </main>
   );
 }
