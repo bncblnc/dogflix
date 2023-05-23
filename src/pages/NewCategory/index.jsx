@@ -17,7 +17,11 @@ const Container = styled.div`
   gap: 2rem;
 `;
 
-export default function NewCategory({ categoryData, submitFunction }) {
+export default function NewCategory({
+  categoryData,
+  submitFunction,
+  deleteFunction,
+}) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [color, setColor] = useState("#000000");
@@ -51,7 +55,7 @@ export default function NewCategory({ categoryData, submitFunction }) {
         <ButtonsForm />
       </FormStyled>
 
-      <CategoriesList item={categoryData} />
+      <CategoriesList item={categoryData} deleteFunction={deleteFunction} />
     </main>
   );
 }

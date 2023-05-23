@@ -6,9 +6,11 @@ import {
   grayColorDark,
   grayColorInput,
   grayColorLight,
+  primaryColor,
 } from "../UI/variables";
 import { Dialog } from "@mui/material";
 import { ButtonPrimary, ButtonSecondary } from "../Button";
+import { FiAlertTriangle } from "react-icons/fi";
 
 const CategoryCard = styled.div`
   width: 50%;
@@ -42,21 +44,35 @@ const IconsBox = styled.div`
 const DialogBox = styled.div`
   background-color: ${grayColorInput};
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 
   font-size: 2.5rem;
   color: ${grayColorLight};
   text-align: center;
 `;
 
+const AlertIcon = styled(FiAlertTriangle)`
+  color: ${primaryColor};
+  font-size: 8rem;
+`;
+
 const ButtonContainer = styled.div`
-  margin-top: 3rem;
   display: flex;
   justify-content: center;
   gap: 3rem;
 `;
 
-export default function CategoriesList({ item }) {
+export default function CategoriesList({ item, deleteFunction }) {
   const [openAlert, setOpenAlert] = useState(false);
+  const [categoryClicked, setCategoryClicked] = useState("");
+
+  function handleOpenAlert(e) {
+    setOpenAlert(true);
+    setCategoryClicked(e.currentTarget.id);
+  }
 
   return (
     <>
@@ -65,7 +81,7 @@ export default function CategoriesList({ item }) {
           {obj.category}
           <IconsBox>
             <IconEdit id={obj.category} />
-            <IconDelete id={obj.category} onClick={() => setOpenAlert(true)} />
+            <IconDelete id={obj.category} onClick={handleOpenAlert} />
           </IconsBox>
         </CategoryCard>
       ))}
@@ -76,10 +92,19 @@ export default function CategoriesList({ item }) {
         aria-describedby="alert-dialog-description"
       >
         <DialogBox>
-          Tem certeza que deseja deletar a categoria?
+          <AlertIcon />
+          Tem certeza que deseja deletar a categoria {categoryClicked}?
           <ButtonContainer>
             <ButtonSecondary>Não</ButtonSecondary>
-            <ButtonPrimary primary>Sim</ButtonPrimary>
+            <ButtonPrimary
+              primary
+              onClick={() => {
+                deleteFunction(categoryClicked);
+                setOpenAlert(false);
+              }}
+            >
+              Sim
+            </ButtonPrimary>
           </ButtonContainer>
         </DialogBox>
       </Dialog>

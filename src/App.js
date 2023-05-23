@@ -41,6 +41,11 @@ function App() {
     setLocalStorage(categoryData);
   }
 
+  function deleteCategory(name) {
+    setCategoryData(categoryData.filter((data) => data.category !== name));
+    // setLocalStorage(categoryData);
+  }
+
   return (
     <BrowserRouter>
       <GlobalStyle />
@@ -61,6 +66,7 @@ function App() {
               <NewCategory
                 categoryData={categoryData}
                 submitFunction={addCategory}
+                deleteFunction={deleteCategory}
               />
             }
           />
