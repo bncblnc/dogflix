@@ -5,9 +5,7 @@ import TextLarge from "../../components/Form/TextLarge";
 import Select from "../../components/Form/SelectInput";
 import ButtonsForm from "../../components/Form/ButtonsForm";
 
-import initialData from "../../data/initial-data.json";
-
-export default function NewVideo() {
+export default function NewVideo({ categoryData, submitFunction }) {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [category, setCategory] = useState("");
@@ -18,7 +16,7 @@ export default function NewVideo() {
       <FormStyled
         onSubmit={(evento) => {
           evento.preventDefault();
-          console.log(title, link, category, description);
+          submitFunction(title, link, category, description);
         }}
       >
         <TitleForm>Novo Vídeo</TitleForm>
@@ -38,7 +36,7 @@ export default function NewVideo() {
           name="category"
           label="Categoria"
           value={category}
-          options={initialData.map((data) => data.category)}
+          options={categoryData.map((data) => data.category)}
           setFunction={setCategory}
         />
 

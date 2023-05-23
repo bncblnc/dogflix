@@ -6,7 +6,6 @@ import TextLarge from "../../components/Form/TextLarge";
 import ColorInput from "../../components/Form/ColorInput";
 import ButtonsForm from "../../components/Form/ButtonsForm";
 
-import initialData from "../../data/initial-data.json";
 import CategoriesList from "../../components/CategoriesList";
 import styled from "styled-components";
 
@@ -18,7 +17,7 @@ const Container = styled.div`
   gap: 2rem;
 `;
 
-export default function NewCategory() {
+export default function NewCategory({ categoryData, submitFunction }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [color, setColor] = useState("#000000");
@@ -28,7 +27,7 @@ export default function NewCategory() {
       <FormStyled
         onSubmit={(evento) => {
           evento.preventDefault();
-          console.log(name, color, description);
+          submitFunction(name, color, description);
         }}
       >
         <TitleForm>Nova Categoria</TitleForm>
@@ -52,7 +51,7 @@ export default function NewCategory() {
         <ButtonsForm />
       </FormStyled>
 
-      <CategoriesList item={initialData} />
+      <CategoriesList item={categoryData} />
     </main>
   );
 }

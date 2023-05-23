@@ -2,18 +2,17 @@ import React from "react";
 import Hero from "../../components/Hero";
 import Carousel from "../../components/Carousel";
 import { MarginMedium } from "../../components/UI";
-import initialData from "../../data/initial-data.json";
 
-export default function Home() {
+export default function Home({ categoryData }) {
   return (
     <main>
       <Hero
-        category={initialData[0].category}
-        url={initialData[0].url}
-        color={initialData[0].color}
-        videos={initialData[0].videos}
+        category={categoryData[0].category}
+        url={categoryData[0].url}
+        color={categoryData[0].color}
+        videos={categoryData[0].videos}
       />
-      {initialData.slice(1).map((data, index) => {
+      {categoryData.slice(1).map((data, index) => {
         return (
           <Carousel
             key={index}
