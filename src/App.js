@@ -15,7 +15,7 @@ function App() {
   const [categoryData, setCategoryData] = useState(getCategoryData);
 
   function addVideo(title, link, category, description) {
-    categoryData.filter((data) => {
+    categoryData.map((data) => {
       if (data.category === category) {
         data.videos.push({
           id: link.slice(-11),
@@ -23,8 +23,9 @@ function App() {
           description: description,
         });
       }
-      setLocalStorage(categoryData);
+      return data;
     });
+    setLocalStorage(categoryData);
   }
 
   function addCategory(name, color, description) {

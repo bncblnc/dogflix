@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MdDelete as IconDelete, MdEdit as IconEdit } from "react-icons/md";
-import { blackColorLighter, grayColorDark } from "../UI/variables";
+import {
+  blackColorLighter,
+  grayColorDark,
+  grayColorInput,
+  grayColorLight,
+} from "../UI/variables";
+import { Dialog } from "@mui/material";
+import { ButtonPrimary, ButtonSecondary } from "../Button";
 
 const CategoryCard = styled.div`
   width: 50%;
@@ -32,18 +39,50 @@ const IconsBox = styled.div`
   }
 `;
 
+const DialogBox = styled.div`
+  background-color: ${grayColorInput};
+  padding: 2rem;
+
+  font-size: 2.5rem;
+  color: ${grayColorLight};
+  text-align: center;
+`;
+
+const ButtonContainer = styled.div`
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+`;
+
 export default function CategoriesList({ item }) {
+  const [openAlert, setOpenAlert] = useState(false);
+
   return (
     <>
       {item.map((obj, index) => (
         <CategoryCard key={index} style={{ borderColor: obj.color }}>
           {obj.category}
           <IconsBox>
-            <IconEdit />
-            <IconDelete />
+            <IconEdit id={obj.category} />
+            <IconDelete id={obj.category} onClick={() => setOpenAlert(true)} />
           </IconsBox>
         </CategoryCard>
       ))}
+      <Dialog
+        open={openAlert}
+        onClose={() => setOpenAlert(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogBox>
+          Tem certeza que deseja deletar a categoria?
+          <ButtonContainer>
+            <ButtonSecondary>Não</ButtonSecondary>
+            <ButtonPrimary primary>Sim</ButtonPrimary>
+          </ButtonContainer>
+        </DialogBox>
+      </Dialog>
     </>
   );
 }
