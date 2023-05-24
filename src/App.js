@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GlobalStyle } from "./components/GlobalStyle";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,19 +13,21 @@ import { getCategoryData, setLocalStorage } from "./data";
 
 function App() {
   const [categoryData, setCategoryData] = useState(getCategoryData);
+  useEffect(() => setLocalStorage(categoryData), [categoryData]);
 
   function addVideo(title, link, category, description) {
-    categoryData.map((data) => {
-      if (data.category === category) {
-        data.videos.push({
-          id: link.slice(-11),
-          title: title,
-          description: description,
-        });
-      }
-      return data;
-    });
-    setLocalStorage(categoryData);
+    setCategoryData(
+      categoryData.map((data) => {
+        if (data.category === category) {
+          data.videos.push({
+            id: link.slice(-11),
+            title: title,
+            description: description,
+          });
+        }
+        return data;
+      })
+    );
   }
 
   function addCategory(name, color, description) {
@@ -38,12 +40,14 @@ function App() {
     };
 
     setCategoryData([...categoryData, newCategory]);
-    setLocalStorage(categoryData);
   }
 
   function deleteCategory(name) {
     setCategoryData(categoryData.filter((data) => data.category !== name));
-    // setLocalStorage(categoryData);
+  }
+
+  function openEditCategory(category) {
+    return categoryData.filter((data) => data.category === category)[0];
   }
 
   return (
@@ -67,6 +71,7 @@ function App() {
                 categoryData={categoryData}
                 submitFunction={addCategory}
                 deleteFunction={deleteCategory}
+                openEdit={openEditCategory}
               />
             }
           />

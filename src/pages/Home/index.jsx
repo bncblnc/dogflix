@@ -12,18 +12,21 @@ export default function Home({ categoryData }) {
         color={categoryData[0].color}
         videos={categoryData[0].videos}
       />
-      {categoryData.slice(1).map((data, index) => {
-        return (
-          <Carousel
-            key={index}
-            category={data.category}
-            url={data.url}
-            subtitle={data.subtitle}
-            color={data.color}
-            videos={data.videos}
-          />
-        );
-      })}
+      {categoryData
+        .slice(1)
+        .filter((data) => data.videos.length > 0)
+        .map((data, index) => {
+          return (
+            <Carousel
+              key={index}
+              category={data.category}
+              url={data.url}
+              subtitle={data.subtitle}
+              color={data.color}
+              videos={data.videos}
+            />
+          );
+        })}
 
       <MarginMedium />
     </main>

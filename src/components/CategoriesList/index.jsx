@@ -11,6 +11,10 @@ import {
 import { Dialog } from "@mui/material";
 import { ButtonPrimary, ButtonSecondary } from "../Button";
 import { FiAlertTriangle } from "react-icons/fi";
+import { FormStyled, TitleForm } from "../Form";
+import TextSmall from "../Form/TextSmall";
+import ColorInput from "../Form/ColorInput";
+import TextLarge from "../Form/TextLarge";
 
 const CategoryCard = styled.div`
   width: 50%;
@@ -43,20 +47,34 @@ const IconsBox = styled.div`
 
 const DialogBox = styled.div`
   background-color: ${grayColorInput};
+  max-width: 45rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+`;
 
-  font-size: 2.5rem;
-  color: ${grayColorLight};
-  text-align: center;
+const DialogBoxForm = styled.div`
+  background-color: #333;
+`;
+
+const Container = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 2rem;
 `;
 
 const AlertIcon = styled(FiAlertTriangle)`
   color: ${primaryColor};
   font-size: 8rem;
+`;
+
+const DialogText = styled.p`
+  font-size: 2.1rem;
+  color: ${grayColorLight};
 `;
 
 const ButtonContainer = styled.div`
@@ -65,13 +83,31 @@ const ButtonContainer = styled.div`
   gap: 3rem;
 `;
 
-export default function CategoriesList({ item, deleteFunction }) {
-  const [openAlert, setOpenAlert] = useState(false);
+const TitleEdit = styled(TitleForm)`
+  font-size: 3rem;
+`;
+
+export default function CategoriesList({ item, deleteFunction, getData }) {
   const [categoryClicked, setCategoryClicked] = useState("");
+  const [openAlert, setOpenAlert] = useState(false);
+  const [openEdit, setOpenEdit] = useState(false);
+
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [color, setColor] = useState("#000000");
 
   function handleOpenAlert(e) {
     setOpenAlert(true);
     setCategoryClicked(e.currentTarget.id);
+  }
+
+  function handleOpenEdit(e) {
+    const data = getData(e.currentTarget.id);
+
+    setName(data.category);
+    setDescription(data.subtitle);
+    setColor(data.color);
+    setOpenEdit(true);
   }
 
   return (
@@ -80,22 +116,24 @@ export default function CategoriesList({ item, deleteFunction }) {
         <CategoryCard key={index} style={{ borderColor: obj.color }}>
           {obj.category}
           <IconsBox>
-            <IconEdit id={obj.category} />
+            <IconEdit id={obj.category} onClick={handleOpenEdit} />
             <IconDelete id={obj.category} onClick={handleOpenAlert} />
           </IconsBox>
         </CategoryCard>
       ))}
-      <Dialog
-        open={openAlert}
-        onClose={() => setOpenAlert(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
+
+      <Dialog open={openAlert} onClose={() => setOpenAlert(false)}>
         <DialogBox>
-          <AlertIcon />
-          Tem certeza que deseja deletar a categoria {categoryClicked}?
+          <Container>
+            <AlertIcon />
+            <DialogText>
+              Tem certeza que deseja deletar a categoria {categoryClicked}?
+            </DialogText>
+          </Container>
           <ButtonContainer>
-            <ButtonSecondary>Não</ButtonSecondary>
+            <ButtonSecondary onClick={() => setOpenAlert(false)}>
+              Não
+            </ButtonSecondary>
             <ButtonPrimary
               primary
               onClick={() => {
@@ -107,6 +145,40 @@ export default function CategoriesList({ item, deleteFunction }) {
             </ButtonPrimary>
           </ButtonContainer>
         </DialogBox>
+      </Dialog>
+
+      <Dialog
+        open={openEdit}
+        onClose={() => setOpenEdit(false)}
+        maxWidth={"sm"}
+        fullWidth={true}
+      >
+        <DialogBoxForm>
+          <FormStyled
+            onSubmit={(evento) => {
+              evento.preventDefault();
+            }}
+          >
+            <TitleEdit>Editar Categoria</TitleEdit>
+            <Container>
+              <ColorInput value={color} setFunction={setColor} />
+              <TextSmall
+                label="Nome"
+                type="text"
+                value={name}
+                setFunction={setName}
+              />
+            </Container>
+
+            <TextLarge
+              label="Descrição"
+              type="text"
+              value={description}
+              setFunction={setDescription}
+            />
+            <ButtonPrimary primary>Salvar</ButtonPrimary>
+          </FormStyled>
+        </DialogBoxForm>
       </Dialog>
     </>
   );

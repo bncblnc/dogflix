@@ -21,6 +21,7 @@ export default function NewCategory({
   categoryData,
   submitFunction,
   deleteFunction,
+  openEdit,
 }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -55,7 +56,11 @@ export default function NewCategory({
         <ButtonsForm />
       </FormStyled>
 
-      <CategoriesList item={categoryData} deleteFunction={deleteFunction} />
+      <CategoriesList
+        item={categoryData}
+        deleteFunction={deleteFunction}
+        getData={openEdit}
+      />
     </main>
   );
 }
