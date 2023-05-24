@@ -14,8 +14,8 @@ export default function NewVideo({ categoryData, submitFunction }) {
   return (
     <main>
       <FormStyled
-        onSubmit={(evento) => {
-          evento.preventDefault();
+        onSubmit={(e) => {
+          e.preventDefault();
           submitFunction(title, link, category, description);
         }}
       >

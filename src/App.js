@@ -50,6 +50,20 @@ function App() {
     return categoryData.filter((data) => data.category === category)[0];
   }
 
+  function editCategory(oldCategory, name, color, description) {
+    setCategoryData(
+      categoryData.map((data) => {
+        if (data.category === oldCategory) {
+          data.category = name;
+          data.url = name.toLowerCase().replace(/\s/g, "");
+          data.subtitle = description;
+          data.color = color;
+        }
+        return data;
+      })
+    );
+  }
+
   return (
     <BrowserRouter>
       <GlobalStyle />
@@ -72,6 +86,7 @@ function App() {
                 submitFunction={addCategory}
                 deleteFunction={deleteCategory}
                 openEdit={openEditCategory}
+                editCategory={editCategory}
               />
             }
           />

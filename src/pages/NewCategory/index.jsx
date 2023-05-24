@@ -22,6 +22,7 @@ export default function NewCategory({
   submitFunction,
   deleteFunction,
   openEdit,
+  editCategory,
 }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -30,8 +31,8 @@ export default function NewCategory({
   return (
     <main style={{ minHeight: "calc(100vh - 22rem)" }}>
       <FormStyled
-        onSubmit={(evento) => {
-          evento.preventDefault();
+        onSubmit={(e) => {
+          e.preventDefault();
           submitFunction(name, color, description);
         }}
       >
@@ -60,6 +61,7 @@ export default function NewCategory({
         item={categoryData}
         deleteFunction={deleteFunction}
         getData={openEdit}
+        editCategory={editCategory}
       />
     </main>
   );

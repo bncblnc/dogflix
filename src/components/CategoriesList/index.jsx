@@ -87,7 +87,12 @@ const TitleEdit = styled(TitleForm)`
   font-size: 3rem;
 `;
 
-export default function CategoriesList({ item, deleteFunction, getData }) {
+export default function CategoriesList({
+  item,
+  deleteFunction,
+  getData,
+  editCategory,
+}) {
   const [categoryClicked, setCategoryClicked] = useState("");
   const [openAlert, setOpenAlert] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
@@ -102,11 +107,12 @@ export default function CategoriesList({ item, deleteFunction, getData }) {
   }
 
   function handleOpenEdit(e) {
+    setCategoryClicked(e.currentTarget.id);
     const data = getData(e.currentTarget.id);
-
     setName(data.category);
     setDescription(data.subtitle);
     setColor(data.color);
+
     setOpenEdit(true);
   }
 
@@ -155,8 +161,10 @@ export default function CategoriesList({ item, deleteFunction, getData }) {
       >
         <DialogBoxForm>
           <FormStyled
-            onSubmit={(evento) => {
-              evento.preventDefault();
+            onSubmit={(e) => {
+              e.preventDefault();
+              editCategory(categoryClicked, name, color, description);
+              setOpenEdit(false);
             }}
           >
             <TitleEdit>Editar Categoria</TitleEdit>
