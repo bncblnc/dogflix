@@ -1,7 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Bar, StyledLabel, fieldStyled, textFieldAnimation } from ".";
+import {
+  Bar,
+  FieldContainer,
+  StyledLabel,
+  fieldStyled,
+  textFieldAnimation,
+} from ".";
 
 const StyledTextarea = styled.textarea`
   ${fieldStyled};
@@ -11,7 +17,7 @@ const StyledTextarea = styled.textarea`
 
 export default function TextLarge({ label, type, value, setFunction }) {
   return (
-    <>
+    <FieldContainer>
       <StyledTextarea
         rows="4"
         type={type}
@@ -21,6 +27,6 @@ export default function TextLarge({ label, type, value, setFunction }) {
       />
       <Bar />
       <StyledLabel>{label}</StyledLabel>
-    </>
+    </FieldContainer>
   );
 }

@@ -11,7 +11,7 @@ import {
 import { Dialog } from "@mui/material";
 import { ButtonPrimary, ButtonSecondary } from "../Button";
 import { FiAlertTriangle } from "react-icons/fi";
-import { FieldContainer, FormStyled, TitleForm } from "../Form";
+import { FormStyled, TitleForm } from "../Form";
 import TextSmall from "../Form/TextSmall";
 import ColorInput from "../Form/ColorInput";
 import TextLarge from "../Form/TextLarge";
@@ -171,24 +171,21 @@ export default function CategoriesList({
             <Container>
               <ColorInput value={color} setFunction={setColor} />
 
-              <FieldContainer>
-                <TextSmall
-                  label="Nome"
-                  type="text"
-                  value={name}
-                  setFunction={setName}
-                />
-              </FieldContainer>
+              <TextSmall
+                label="Nome"
+                type="text"
+                value={name}
+                setFunction={setName}
+              />
             </Container>
 
-            <FieldContainer>
-              <TextLarge
-                label="Descrição"
-                type="text"
-                value={description}
-                setFunction={setDescription}
-              />
-            </FieldContainer>
+            <TextLarge
+              label="Descrição"
+              type="text"
+              value={description}
+              setFunction={setDescription}
+            />
+
             <ButtonPrimary primary>Salvar</ButtonPrimary>
           </FormStyled>
         </DialogBoxForm>
