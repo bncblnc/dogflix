@@ -2,12 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { FaChevronDown as Icon } from "react-icons/fa";
-import {
-  FieldContainer,
-  StyledLabel,
-  fieldStyled,
-  selectFieldAnimation,
-} from ".";
+import { StyledLabel, fieldStyled, selectFieldAnimation } from ".";
 import { grayColorLight } from "../UI/variables";
 
 const StyledSelect = styled.select`
@@ -35,7 +30,7 @@ const ArrowIcon = styled(Icon)`
 
 export default function Select({ name, label, options, setFunction }) {
   return (
-    <FieldContainer>
+    <>
       <StyledSelect
         name={name}
         onChange={(event) => setFunction(event.target.value)}
@@ -50,6 +45,6 @@ export default function Select({ name, label, options, setFunction }) {
       <ArrowIcon />
 
       <StyledLabel>{label}</StyledLabel>
-    </FieldContainer>
+    </>
   );
 }

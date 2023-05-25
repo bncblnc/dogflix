@@ -6,6 +6,7 @@ export const blackColorLight = "#00000080";
 export const blackColorLighter = "#9E9E9E";
 
 export const grayColorInput = "#53585D";
+export const grayColorDialog = "#333333";
 export const grayColorDark = "#C2C2C2";
 export const grayColorMedium = "#E5E5E5";
 export const grayColorLight = "#F5F5F5";

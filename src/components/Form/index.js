@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {
+  errorColorMedium,
   grayColorInput,
   grayColorLight,
   grayColorMedium,
@@ -19,7 +20,7 @@ export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 4.3rem;
 `;
 
 export const fieldStyled = () => `
@@ -90,4 +91,18 @@ export const StyledLabel = styled.label`
   left: 0.5rem;
   top: ${(props) => (props.static ? "-2rem" : "1rem")};
   transition: 0.2s ease all;
+`;
+
+export const Invalid = styled.p`
+  color: ${errorColorMedium};
+  font-size: 1.4rem;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  padding: 0.4rem 0 0 0.5rem;
+  z-index: 2;
+
+  width: 100%;
+  border-top: 0.3rem solid ${errorColorMedium};
 `;

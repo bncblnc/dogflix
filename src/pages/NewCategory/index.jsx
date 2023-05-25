@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { FormStyled, TitleForm } from "../../components/Form";
+import { FieldContainer, FormStyled, TitleForm } from "../../components/Form";
 import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
 import ColorInput from "../../components/Form/ColorInput";
@@ -38,21 +38,26 @@ export default function NewCategory({
       >
         <TitleForm>Nova Categoria</TitleForm>
         <Container>
-          <TextSmall
-            label="Nome"
-            type="text"
-            value={name}
-            setFunction={setName}
-          />
+          <FieldContainer>
+            <TextSmall
+              label="Nome"
+              type="text"
+              value={name}
+              setFunction={setName}
+            />
+          </FieldContainer>
+
           <ColorInput value={color} setFunction={setColor} />
         </Container>
 
-        <TextLarge
-          label="Descrição"
-          type="text"
-          value={description}
-          setFunction={setDescription}
-        />
+        <FieldContainer>
+          <TextLarge
+            label="Descrição"
+            type="text"
+            value={description}
+            setFunction={setDescription}
+          />
+        </FieldContainer>
 
         <ButtonsForm />
       </FormStyled>

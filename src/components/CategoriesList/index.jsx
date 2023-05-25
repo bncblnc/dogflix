@@ -4,14 +4,14 @@ import { MdDelete as IconDelete, MdEdit as IconEdit } from "react-icons/md";
 import {
   blackColorLighter,
   grayColorDark,
-  grayColorInput,
+  grayColorDialog,
   grayColorLight,
   primaryColor,
 } from "../UI/variables";
 import { Dialog } from "@mui/material";
 import { ButtonPrimary, ButtonSecondary } from "../Button";
 import { FiAlertTriangle } from "react-icons/fi";
-import { FormStyled, TitleForm } from "../Form";
+import { FieldContainer, FormStyled, TitleForm } from "../Form";
 import TextSmall from "../Form/TextSmall";
 import ColorInput from "../Form/ColorInput";
 import TextLarge from "../Form/TextLarge";
@@ -46,7 +46,7 @@ const IconsBox = styled.div`
 `;
 
 const DialogBox = styled.div`
-  background-color: ${grayColorInput};
+  background-color: ${grayColorDialog};
   max-width: 45rem;
   padding: 2rem;
   display: flex;
@@ -56,7 +56,7 @@ const DialogBox = styled.div`
 `;
 
 const DialogBoxForm = styled.div`
-  background-color: #333;
+  background-color: ${grayColorDialog};
 `;
 
 const Container = styled.div`
@@ -170,20 +170,25 @@ export default function CategoriesList({
             <TitleEdit>Editar Categoria</TitleEdit>
             <Container>
               <ColorInput value={color} setFunction={setColor} />
-              <TextSmall
-                label="Nome"
-                type="text"
-                value={name}
-                setFunction={setName}
-              />
+
+              <FieldContainer>
+                <TextSmall
+                  label="Nome"
+                  type="text"
+                  value={name}
+                  setFunction={setName}
+                />
+              </FieldContainer>
             </Container>
 
-            <TextLarge
-              label="Descrição"
-              type="text"
-              value={description}
-              setFunction={setDescription}
-            />
+            <FieldContainer>
+              <TextLarge
+                label="Descrição"
+                type="text"
+                value={description}
+                setFunction={setDescription}
+              />
+            </FieldContainer>
             <ButtonPrimary primary>Salvar</ButtonPrimary>
           </FormStyled>
         </DialogBoxForm>

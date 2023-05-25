@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { FormStyled, TitleForm } from "../../components/Form";
+import {
+  FieldContainer,
+  FormStyled,
+  Invalid,
+  TitleForm,
+} from "../../components/Form";
 import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
 import Select from "../../components/Form/SelectInput";
@@ -10,6 +15,11 @@ export default function NewVideo({ categoryData, submitFunction }) {
   const [link, setLink] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+
+  function renderError(value) {
+    if (value) return <Invalid>{value}</Invalid>;
+  }
 
   return (
     <main>
@@ -20,32 +30,48 @@ export default function NewVideo({ categoryData, submitFunction }) {
         }}
       >
         <TitleForm>Novo Vídeo</TitleForm>
-        <TextSmall
-          label="Título"
-          type="text"
-          value={title}
-          setFunction={setTitle}
-        />
-        <TextSmall
-          label="Link do vídeo"
-          type="text"
-          value={link}
-          setFunction={setLink}
-        />
-        <Select
-          name="category"
-          label="Categoria"
-          value={category}
-          options={categoryData.map((data) => data.category)}
-          setFunction={setCategory}
-        />
 
-        <TextLarge
-          label="Descrição do vídeo"
-          type="text"
-          value={description}
-          setFunction={setDescription}
-        />
+        <FieldContainer>
+          <TextSmall
+            label="Título"
+            type="text"
+            value={title}
+            setFunction={setTitle}
+          />
+
+          {renderError(formErrors.title)}
+        </FieldContainer>
+
+        <FieldContainer>
+          <TextSmall
+            label="Link do vídeo"
+            type="text"
+            value={link}
+            setFunction={setLink}
+          />
+          {renderError(formErrors.link)}
+        </FieldContainer>
+
+        <FieldContainer>
+          <Select
+            name="category"
+            label="Categoria"
+            value={category}
+            options={categoryData.map((data) => data.category)}
+            setFunction={setCategory}
+          />
+          {renderError(formErrors.category)}
+        </FieldContainer>
+
+        <FieldContainer>
+          <TextLarge
+            label="Descrição do vídeo"
+            type="text"
+            value={description}
+            setFunction={setDescription}
+          />
+          {renderError(formErrors.description)}
+        </FieldContainer>
 
         <ButtonsForm />
       </FormStyled>
