@@ -40,6 +40,7 @@ export default function NewCategory({
         onSubmit={(e) => {
           e.preventDefault();
           submitFunction(name, color, description);
+          clearInputs();
         }}
       >
         <TitleForm>Nova Categoria</TitleForm>

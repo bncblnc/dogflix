@@ -24,6 +24,7 @@ export default function NewVideo({ categoryData, submitFunction }) {
         onSubmit={(e) => {
           e.preventDefault();
           submitFunction(title, link, category, description);
+          clearInputs();
         }}
       >
         <TitleForm>Novo Vídeo</TitleForm>
