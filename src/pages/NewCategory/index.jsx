@@ -28,6 +28,12 @@ export default function NewCategory({
   const [description, setDescription] = useState("");
   const [color, setColor] = useState("#000000");
 
+  function clearInputs() {
+    setName("");
+    setDescription("");
+    setColor("#000000");
+  }
+
   return (
     <main style={{ minHeight: "calc(100vh - 22rem)" }}>
       <FormStyled
@@ -55,7 +61,7 @@ export default function NewCategory({
           setFunction={setDescription}
         />
 
-        <ButtonsForm />
+        <ButtonsForm clearFunction={clearInputs} />
       </FormStyled>
 
       <CategoriesList

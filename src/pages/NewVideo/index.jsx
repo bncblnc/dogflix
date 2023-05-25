@@ -11,6 +11,13 @@ export default function NewVideo({ categoryData, submitFunction }) {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
 
+  function clearInputs() {
+    setTitle("");
+    setLink("");
+    setCategory("");
+    setDescription("");
+  }
+
   return (
     <main>
       <FormStyled
@@ -51,7 +58,7 @@ export default function NewVideo({ categoryData, submitFunction }) {
           setFunction={setDescription}
         />
 
-        <ButtonsForm />
+        <ButtonsForm clearFunction={clearInputs} />
       </FormStyled>
     </main>
   );

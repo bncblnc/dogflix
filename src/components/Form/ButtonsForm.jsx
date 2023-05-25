@@ -7,13 +7,15 @@ const Container = styled.div`
   gap: 4rem;
 `;
 
-export default function ButtonsForm() {
+export default function ButtonsForm({ clearFunction }) {
   return (
     <Container>
       <ButtonPrimary type="submit" primary>
         Salvar
       </ButtonPrimary>
-      <ButtonPrimary>Limpar</ButtonPrimary>
+      <ButtonPrimary type="button" onClick={clearFunction}>
+        Limpar
+      </ButtonPrimary>
     </Container>
   );
 }
