@@ -30,6 +30,7 @@ export default function TextSmall({
       setFunction("");
     } else if (isLink && !value.includes("youtu")) {
       setError(<Invalid>O vídeo precisa ser do YouTube.</Invalid>);
+      setFunction("");
     } else setError("");
   }
 
