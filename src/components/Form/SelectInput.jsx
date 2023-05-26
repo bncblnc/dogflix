@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { FaChevronDown as Icon } from "react-icons/fa";
@@ -63,27 +63,35 @@ const OptionDiv = styled.div`
   }
 `;
 
-export default function Select({ name, label, options, setFunction }) {
+export default function Select({ name, label, value, options, setFunction }) {
+  const [selectOpen, setSelectOpen] = useState(false);
+  useEffect(() => {
+    toggleOptionBox();
+  }, [selectOpen]);
+
   function toggleOptionBox() {
     const optionsBox = document.querySelector(".options-box");
 
-    if (optionsBox.style.height === "") optionsBox.style.height = "auto";
+    if (selectOpen) optionsBox.style.height = "auto";
     else optionsBox.style.height = "";
   }
 
   function selectOption(event) {
-    const optionsBox = document.querySelector(".options-box");
     const select = document.querySelector(".select");
 
-    optionsBox.style.height = "";
-    select.value = `${event.currentTarget.id}`;
+    setSelectOpen(false);
+    select.value = event.currentTarget.id;
     setFunction(event.currentTarget.id);
   }
 
+  window.addEventListener("click", (e) => {
+    if (selectOpen && e.target.id === "") setSelectOpen(false);
+  });
+
   return (
     <FieldContainer>
-      <FieldContainer onClick={toggleOptionBox}>
-        <StyledSelect name={name} className="select" required>
+      <FieldContainer onClick={() => setSelectOpen(!selectOpen)} id="container">
+        <StyledSelect name={name} value={value} className="select" required>
           <option key="" hidden></option>
           {options.map((option) => (
             <option key={option} hidden>
