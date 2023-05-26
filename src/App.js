@@ -34,7 +34,7 @@ function App() {
     const newCategory = {
       category: name,
       url: name.toLowerCase().replace(/\s/g, ""),
-      subtitle: description,
+      description: description,
       color: color,
       videos: [],
     };
@@ -56,7 +56,7 @@ function App() {
         if (data.category === oldCategory) {
           data.category = name;
           data.url = name.toLowerCase().replace(/\s/g, "");
-          data.subtitle = description;
+          data.description = description;
           data.color = color;
         }
         return data;

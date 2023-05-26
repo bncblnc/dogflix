@@ -124,7 +124,7 @@ export default function CategoriesList({
 
     const data = getData(e.currentTarget.id);
     setName(data.category);
-    setDescription(data.subtitle);
+    setDescription(data.description);
     setColor(data.color);
 
     setOpenEdit(true);

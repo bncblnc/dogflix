@@ -21,7 +21,7 @@ export default function Home({ categoryData }) {
               key={index}
               category={data.category}
               url={data.url}
-              subtitle={data.subtitle}
+              description={data.description}
               color={data.color}
               videos={data.videos}
             />
