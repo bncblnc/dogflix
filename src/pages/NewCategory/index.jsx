@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-import { FormStyled, TitleForm } from "../../components/Form";
+import {
+  FieldContainer,
+  FormStyled,
+  Invalid,
+  TitleForm,
+} from "../../components/Form";
 import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
 import ColorInput from "../../components/Form/ColorInput";
@@ -27,11 +32,24 @@ export default function NewCategory({
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [color, setColor] = useState("#000000");
+  const [error, setError] = useState("");
+
+  function renderInvalid(name, value, setFunction, label) {
+    let newError = {};
+
+    if (value.replace(/\s/g, "") === "") {
+      newError[name] = <Invalid>{label} é obrigatório.</Invalid>;
+      setFunction("");
+    } else newError[name] = "";
+
+    setError({ ...error, ...newError });
+  }
 
   function clearInputs() {
     setName("");
     setDescription("");
     setColor("#000000");
+    setError("");
   }
 
   return (
@@ -45,22 +63,32 @@ export default function NewCategory({
       >
         <TitleForm>Nova Categoria</TitleForm>
         <Container>
-          <TextSmall
-            label="Nome"
-            type="text"
-            value={name}
-            setFunction={setName}
-          />
+          <FieldContainer>
+            <TextSmall
+              name="name"
+              label="Nome"
+              type="text"
+              value={name}
+              setFunction={setName}
+              invalidFunction={renderInvalid}
+            />
+            {error.name}
+          </FieldContainer>
 
           <ColorInput value={color} setFunction={setColor} />
         </Container>
 
-        <TextLarge
-          label="Descrição"
-          type="text"
-          value={description}
-          setFunction={setDescription}
-        />
+        <FieldContainer>
+          <TextLarge
+            name="description"
+            label="Descrição"
+            type="text"
+            value={description}
+            setFunction={setDescription}
+            invalidFunction={renderInvalid}
+          />
+          {error.description}
+        </FieldContainer>
 
         <ButtonsForm clearFunction={clearInputs} />
       </FormStyled>

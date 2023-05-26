@@ -11,7 +11,7 @@ import {
 import { Dialog } from "@mui/material";
 import { ButtonPrimary, ButtonSecondary } from "../Button";
 import { FiAlertTriangle } from "react-icons/fi";
-import { FormStyled, TitleForm } from "../Form";
+import { FieldContainer, FormStyled, Invalid, TitleForm } from "../Form";
 import TextSmall from "../Form/TextSmall";
 import ColorInput from "../Form/ColorInput";
 import TextLarge from "../Form/TextLarge";
@@ -100,6 +100,18 @@ export default function CategoriesList({
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [color, setColor] = useState("#000000");
+  const [error, setError] = useState("");
+
+  function renderInvalid(name, value, setFunction, label) {
+    let newError = {};
+
+    if (value.replace(/\s/g, "") === "") {
+      newError[name] = <Invalid>{label} é obrigatório.</Invalid>;
+      setFunction("");
+    } else newError[name] = "";
+
+    setError({ ...error, ...newError });
+  }
 
   function handleOpenAlert(e) {
     setOpenAlert(true);
@@ -107,7 +119,9 @@ export default function CategoriesList({
   }
 
   function handleOpenEdit(e) {
+    setError("");
     setCategoryClicked(e.currentTarget.id);
+
     const data = getData(e.currentTarget.id);
     setName(data.category);
     setDescription(data.subtitle);
@@ -170,21 +184,30 @@ export default function CategoriesList({
             <TitleEdit>Editar Categoria</TitleEdit>
             <Container>
               <ColorInput value={color} setFunction={setColor} />
-
-              <TextSmall
-                label="Nome"
-                type="text"
-                value={name}
-                setFunction={setName}
-              />
+              <FieldContainer>
+                <TextSmall
+                  name="name"
+                  label="Nome"
+                  type="text"
+                  value={name}
+                  setFunction={setName}
+                  invalidFunction={renderInvalid}
+                />
+                {error.name}
+              </FieldContainer>
             </Container>
 
-            <TextLarge
-              label="Descrição"
-              type="text"
-              value={description}
-              setFunction={setDescription}
-            />
+            <FieldContainer>
+              <TextLarge
+                name="description"
+                label="Descrição"
+                type="text"
+                value={description}
+                setFunction={setDescription}
+                invalidFunction={renderInvalid}
+              />
+              {error.description}
+            </FieldContainer>
 
             <ButtonPrimary primary>Salvar</ButtonPrimary>
           </FormStyled>
