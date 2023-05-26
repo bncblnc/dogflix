@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { FormStyled, TitleForm } from "../../components/Form";
+import {
+  FieldContainer,
+  FormStyled,
+  Invalid,
+  TitleForm,
+} from "../../components/Form";
 import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
 import Select from "../../components/Form/SelectInput";
@@ -10,12 +15,28 @@ export default function NewVideo({ categoryData, submitFunction }) {
   const [link, setLink] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
+  const [error, setError] = useState("");
+
+  function renderInvalid(name, value, setFunction, label, isLink) {
+    let newError = {};
+
+    if (value.replace(/\s/g, "") === "") {
+      newError[name] = <Invalid>{label} é obrigatório.</Invalid>;
+      setFunction("");
+    } else if (isLink && !value.includes("youtu")) {
+      newError[name] = <Invalid>O vídeo precisa ser do YouTube.</Invalid>;
+      setFunction("");
+    } else newError[name] = "";
+
+    setError({ ...error, ...newError });
+  }
 
   function clearInputs() {
     setTitle("");
     setLink("");
     setCategory("");
     setDescription("");
+    setError("");
   }
 
   return (
@@ -29,20 +50,30 @@ export default function NewVideo({ categoryData, submitFunction }) {
       >
         <TitleForm>Novo Vídeo</TitleForm>
 
-        <TextSmall
-          label="Título"
-          type="text"
-          value={title}
-          setFunction={setTitle}
-        />
+        <FieldContainer>
+          <TextSmall
+            name="title"
+            label="Título"
+            type="text"
+            value={title}
+            setFunction={setTitle}
+            invalidFunction={renderInvalid}
+          />
+          {error.title}
+        </FieldContainer>
 
-        <TextSmall
-          label="Link do vídeo"
-          type="text"
-          value={link}
-          setFunction={setLink}
-          isLink
-        />
+        <FieldContainer>
+          <TextSmall
+            name="linkVideo"
+            label="Link do vídeo"
+            type="text"
+            value={link}
+            setFunction={setLink}
+            invalidFunction={renderInvalid}
+            isLink
+          />
+          {error.linkVideo}
+        </FieldContainer>
 
         <Select
           name="category"
@@ -52,12 +83,17 @@ export default function NewVideo({ categoryData, submitFunction }) {
           setFunction={setCategory}
         />
 
-        <TextLarge
-          label="Descrição do vídeo"
-          type="text"
-          value={description}
-          setFunction={setDescription}
-        />
+        <FieldContainer>
+          <TextLarge
+            name="description"
+            label="Descrição do vídeo"
+            type="text"
+            value={description}
+            setFunction={setDescription}
+            invalidFunction={renderInvalid}
+          />
+          {error.description}
+        </FieldContainer>
 
         <ButtonsForm clearFunction={clearInputs} />
       </FormStyled>

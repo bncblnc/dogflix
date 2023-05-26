@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-import {
-  Bar,
-  FieldContainer,
-  Invalid,
-  StyledLabel,
-  fieldStyled,
-  textFieldAnimation,
-} from ".";
+import { Bar, StyledLabel, fieldStyled, textFieldAnimation } from ".";
 
 const StyledTextarea = styled.textarea`
   ${fieldStyled};
@@ -16,29 +9,26 @@ const StyledTextarea = styled.textarea`
   resize: none;
 `;
 
-export default function TextLarge({ label, type, value, setFunction }) {
-  const [error, setError] = useState("");
-
-  function renderInvalid(value) {
-    if (value.replace(/\s/g, "") === "") {
-      setError(<Invalid>{label} é obrigatório.</Invalid>);
-      setFunction("");
-    } else setError("");
-  }
-
+export default function TextLarge({
+  name,
+  label,
+  type,
+  value,
+  setFunction,
+  invalidFunction,
+}) {
   return (
-    <FieldContainer>
+    <>
       <StyledTextarea
         rows="4"
         type={type}
         value={value}
         onChange={(event) => setFunction(event.target.value)}
-        onBlur={() => renderInvalid(value)}
+        onBlur={() => invalidFunction(name, value, setFunction, label)}
         required
       />
-      {error}
       <Bar />
       <StyledLabel>{label}</StyledLabel>
-    </FieldContainer>
+    </>
   );
 }

@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-import {
-  Bar,
-  FieldContainer,
-  Invalid,
-  StyledLabel,
-  fieldStyled,
-  textFieldAnimation,
-} from ".";
+import { Bar, StyledLabel, fieldStyled, textFieldAnimation } from ".";
 
 const StyledInput = styled.input`
   ${fieldStyled};
@@ -16,36 +9,26 @@ const StyledInput = styled.input`
 `;
 
 export default function TextSmall({
+  name,
   label,
   type,
   value,
   setFunction,
+  invalidFunction,
   isLink = false,
 }) {
-  const [error, setError] = useState("");
-
-  function renderInvalid(value) {
-    if (value.replace(/\s/g, "") === "") {
-      setError(<Invalid>{label} é obrigatório.</Invalid>);
-      setFunction("");
-    } else if (isLink && !value.includes("youtu")) {
-      setError(<Invalid>O vídeo precisa ser do YouTube.</Invalid>);
-      setFunction("");
-    } else setError("");
-  }
-
   return (
-    <FieldContainer>
+    <>
       <StyledInput
         type={type}
         value={value}
         onChange={(event) => setFunction(event.target.value)}
-        onBlur={() => renderInvalid(value)}
+        onBlur={() => invalidFunction(name, value, setFunction, label, isLink)}
         required
       />
-      {error}
+
       <Bar />
       <StyledLabel>{label}</StyledLabel>
-    </FieldContainer>
+    </>
   );
 }
