@@ -10,11 +10,11 @@ const Container = styled.div`
 export default function ButtonsForm({ clearFunction }) {
   return (
     <Container>
-      <ButtonPrimary type="submit" primary>
-        Salvar
-      </ButtonPrimary>
       <ButtonPrimary type="button" onClick={clearFunction}>
         Limpar
+      </ButtonPrimary>
+      <ButtonPrimary type="submit" primary>
+        Salvar
       </ButtonPrimary>
     </Container>
   );

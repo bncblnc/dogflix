@@ -8,16 +8,18 @@ import {
   fieldStyled,
   selectFieldAnimation,
 } from ".";
-import { grayColorLight } from "../UI/variables";
+import {
+  grayColorInput,
+  grayColorLight,
+  grayColorMedium,
+  primaryColor,
+} from "../UI/variables";
 
 const StyledSelect = styled.select`
   ${fieldStyled};
   ${selectFieldAnimation};
   appearance: none;
-
-  option {
-    font-size: 1.8rem;
-  }
+  pointer-events: none;
 `;
 
 const ArrowIcon = styled(Icon)`
@@ -33,23 +35,74 @@ const ArrowIcon = styled(Icon)`
   transition: all 0.5s;
 `;
 
+const OptionsBox = styled.div`
+  position: absolute;
+  width: inherit;
+  height: 0px;
+  max-height: 20rem;
+  overflow-y: auto;
+  z-index: 10;
+
+  background-color: ${grayColorInput};
+
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+
+  transition: all 0.5s;
+`;
+
+const OptionDiv = styled.div`
+  color: ${grayColorMedium};
+  font-size: 1.8rem;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid #656565;
+  cursor: pointer;
+
+  :hover {
+    background-color: ${primaryColor};
+  }
+`;
+
 export default function Select({ name, label, options, setFunction }) {
+  function toggleOptionBox() {
+    const optionsBox = document.querySelector(".options-box");
+
+    if (optionsBox.style.height === "") optionsBox.style.height = "auto";
+    else optionsBox.style.height = "";
+  }
+
+  function selectOption(event) {
+    const optionsBox = document.querySelector(".options-box");
+    const select = document.querySelector(".select");
+
+    optionsBox.style.height = "";
+    select.value = `${event.currentTarget.id}`;
+    setFunction(event.currentTarget.id);
+  }
+
   return (
     <FieldContainer>
-      <StyledSelect
-        name={name}
-        onChange={(event) => setFunction(event.target.value)}
-        required
-      >
-        <option value="" hidden></option>
+      <FieldContainer onClick={toggleOptionBox}>
+        <StyledSelect name={name} className="select" required>
+          <option key="" hidden></option>
+          {options.map((option) => (
+            <option key={option} hidden>
+              {option}
+            </option>
+          ))}
+        </StyledSelect>
+        <ArrowIcon />
+
+        <StyledLabel>{label}</StyledLabel>
+      </FieldContainer>
+
+      <OptionsBox className="options-box">
         {options.map((option) => (
-          <option key={option}>{option}</option>
+          <OptionDiv key={option} id={option} onClick={selectOption}>
+            {option}
+          </OptionDiv>
         ))}
-      </StyledSelect>
-
-      <ArrowIcon />
-
-      <StyledLabel>{label}</StyledLabel>
+      </OptionsBox>
     </FieldContainer>
   );
 }
