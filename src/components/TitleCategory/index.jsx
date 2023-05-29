@@ -15,13 +15,8 @@ export const TitleCategoryLarge = styled(TitleCategory)`
   font-size: 6rem;
 `;
 
-export const SubtitleCategory = styled.h2`
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: ${grayColorLight};
-`;
-
-export const SubtitleCategoryLarge = styled(SubtitleCategory)`
+export const SubtitleCategoryLarge = styled.h2`
   font-size: 4.7rem;
   font-weight: 400;
+  color: ${grayColorLight};
 `;

@@ -25,6 +25,7 @@ export default function TextLarge({
         value={value}
         onChange={(event) => setFunction(event.target.value)}
         onBlur={() => invalidFunction(name, value, setFunction, label)}
+        maxLength={"280"}
         required
       />
       <Bar />
