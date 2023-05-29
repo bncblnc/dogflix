@@ -59,6 +59,7 @@ export default function NewCategory({
           e.preventDefault();
           submitFunction(name, color, description);
           clearInputs();
+          window.scrollTo(0, document.body.scrollHeight);
         }}
       >
         <TitleForm>Nova Categoria</TitleForm>

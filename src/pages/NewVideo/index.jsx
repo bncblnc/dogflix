@@ -32,12 +32,8 @@ export default function NewVideo({ categoryData, submitFunction }) {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [error, setError] = useState("");
-
   const [url, setUrl] = useState("");
-  // useEffect(
-  //   () => setUrl(category.toLowerCase().replace(/\s/g, "")),
-  //   [category]
-  // );
+
   const [idVideo, setIdVideo] = useState("");
   useEffect(() => setIdVideo(link.slice(-11)), [link]);
 
