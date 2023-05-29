@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import {
   FieldContainer,
   FormStyled,
@@ -9,6 +10,21 @@ import TextSmall from "../../components/Form/TextSmall";
 import TextLarge from "../../components/Form/TextLarge";
 import Select from "../../components/Form/SelectInput";
 import ButtonsForm from "../../components/Form/ButtonsForm";
+import { Dialog } from "@mui/material";
+import { DialogBox, Hyperlink } from "../../components/UI";
+import { BsCheck2Circle } from "react-icons/bs";
+import { grayColorLight, successColor } from "../../components/UI/variables";
+
+const SuccessfullyIcon = styled(BsCheck2Circle)`
+  color: ${successColor};
+  font-size: 8rem;
+`;
+
+const DialogText = styled.p`
+  font-size: 3rem;
+  font-weight: 600;
+  color: ${grayColorLight};
+`;
 
 export default function NewVideo({ categoryData, submitFunction }) {
   const [title, setTitle] = useState("");
@@ -16,6 +32,16 @@ export default function NewVideo({ categoryData, submitFunction }) {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [error, setError] = useState("");
+
+  const [url, setUrl] = useState("");
+  // useEffect(
+  //   () => setUrl(category.toLowerCase().replace(/\s/g, "")),
+  //   [category]
+  // );
+  const [idVideo, setIdVideo] = useState("");
+  useEffect(() => setIdVideo(link.slice(-11)), [link]);
+
+  const [submitted, setSubmitted] = useState(false);
 
   function renderInvalid(name, value, setFunction, label, isLink) {
     let newError = {};
@@ -44,9 +70,11 @@ export default function NewVideo({ categoryData, submitFunction }) {
       <FormStyled
         onSubmit={(e) => {
           e.preventDefault();
-          submitFunction(title, link, category, description);
-          console.log(title, link, category, description);
+          submitFunction(title, idVideo, category, description);
+          setUrl(`/${category.toLowerCase().replace(/\s/g, "")}/${idVideo}`);
+          console.log(url);
           clearInputs();
+          setSubmitted(true);
         }}
       >
         <TitleForm>Novo Vídeo</TitleForm>
@@ -98,6 +126,17 @@ export default function NewVideo({ categoryData, submitFunction }) {
 
         <ButtonsForm clearFunction={clearInputs} />
       </FormStyled>
+
+      <Dialog open={submitted} onClose={() => setSubmitted(false)}>
+        <DialogBox>
+          <SuccessfullyIcon />
+          <DialogText>Video salvo com sucesso!</DialogText>
+
+          <Hyperlink to={url} style={{ alignSelf: "flex-end" }}>
+            Ir para o vídeo →
+          </Hyperlink>
+        </DialogBox>
+      </Dialog>
     </main>
   );
 }

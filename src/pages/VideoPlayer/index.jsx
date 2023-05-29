@@ -1,12 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import initialData from "../../data/initial-data.json";
 import ReactPlayer from "react-player";
 import NotFound from "../NotFound";
 
-function getVideoId(parameters) {
-  const category = initialData.filter(
+function getVideoId(parameters, categoryData) {
+  const category = categoryData.filter(
     (data) => data.url === parameters.category
   )[0];
 
@@ -20,9 +19,9 @@ function getVideoId(parameters) {
   else return false;
 }
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ categoryData }) => {
   const parameters = useParams();
-  const videoId = getVideoId(parameters);
+  const videoId = getVideoId(parameters, categoryData);
 
   if (!videoId) {
     return <NotFound />;

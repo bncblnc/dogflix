@@ -77,10 +77,7 @@ export default function Select({ name, label, value, options, setFunction }) {
   }
 
   function selectOption(event) {
-    const select = document.querySelector(".select");
-
     setSelectOpen(false);
-    select.value = event.currentTarget.id;
     setFunction(event.currentTarget.id);
   }
 
@@ -91,7 +88,13 @@ export default function Select({ name, label, value, options, setFunction }) {
   return (
     <FieldContainer>
       <FieldContainer onClick={() => setSelectOpen(!selectOpen)} id="container">
-        <StyledSelect name={name} value={value} className="select" required>
+        <StyledSelect
+          name={name}
+          value={value}
+          className="select"
+          onChange={() => setFunction(value)}
+          required
+        >
           <option key="" hidden></option>
           {options.map((option) => (
             <option key={option} hidden>

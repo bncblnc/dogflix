@@ -1,4 +1,5 @@
 export const primaryColor = "#2A7AE4";
+export const primaryColorDarker = "#2262b6";
 
 export const blackColorDark = "#000000E5";
 export const blackColorMedium = "#00000099";
@@ -23,3 +24,5 @@ export const courseColor8 = "#9CD33B";
 export const errorColorDark = "#C62828";
 export const errorColorMedium = "#E53935";
 export const errorColorLight = "#FCE7E7";
+
+export const successColor = "#37b24d";

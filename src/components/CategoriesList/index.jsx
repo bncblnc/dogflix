@@ -4,7 +4,6 @@ import { MdDelete as IconDelete, MdEdit as IconEdit } from "react-icons/md";
 import {
   blackColorLighter,
   grayColorDark,
-  grayColorDialog,
   grayColorLight,
   primaryColor,
 } from "../UI/variables";
@@ -15,6 +14,7 @@ import { FieldContainer, FormStyled, Invalid, TitleForm } from "../Form";
 import TextSmall from "../Form/TextSmall";
 import ColorInput from "../Form/ColorInput";
 import TextLarge from "../Form/TextLarge";
+import { DialogBox, DialogBoxForm } from "../UI";
 
 const CategoryCard = styled.div`
   width: 50%;
@@ -43,20 +43,6 @@ const IconsBox = styled.div`
     cursor: pointer;
     transform: scale(1.2);
   }
-`;
-
-const DialogBox = styled.div`
-  background-color: ${grayColorDialog};
-  max-width: 45rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-`;
-
-const DialogBoxForm = styled.div`
-  background-color: ${grayColorDialog};
 `;
 
 const Container = styled.div`

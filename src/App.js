@@ -15,12 +15,12 @@ function App() {
   const [categoryData, setCategoryData] = useState(getCategoryData);
   useEffect(() => setLocalStorage(categoryData), [categoryData]);
 
-  function addVideo(title, link, category, description) {
+  function addVideo(title, idVideo, category, description) {
     setCategoryData(
       categoryData.map((data) => {
         if (data.category === category) {
           data.videos.push({
-            id: link.slice(-11),
+            id: idVideo,
             title: title,
             description: description,
           });
@@ -92,7 +92,10 @@ function App() {
           />
         </Route>
 
-        <Route path=":category/:id/*" element={<VideoPlayer />} />
+        <Route
+          path=":category/:id/*"
+          element={<VideoPlayer categoryData={categoryData} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
