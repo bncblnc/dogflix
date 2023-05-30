@@ -1,89 +1,24 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { MdDelete as IconDelete, MdEdit as IconEdit } from "react-icons/md";
-import {
-  blackColorLighter,
-  grayColorDark,
-  grayColorDialog,
-  grayColorLight,
-} from "../UI/variables";
 import { Dialog } from "@mui/material";
 import { ButtonPrimary, ButtonSecondary } from "../Button";
-import { FieldContainer, FormStyled, Invalid, TitleForm } from "../Form";
+import { FieldContainer, FormStyled, Invalid } from "../Form";
 import TextSmall from "../Form/TextSmall";
 import ColorInput from "../Form/ColorInput";
 import TextLarge from "../Form/TextLarge";
 import { DialogBox, DialogBoxForm, Hyperlink } from "../UI";
-import VideosList from "../VideosList";
-import { AlertIcon, ButtonContainer, Container, DialogText } from "./elements";
-
-const CategoryCard = styled.div`
-  width: 50%;
-  margin: 2rem auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1rem 2rem;
-  border-top: 5px solid;
-  border-radius: 0.3rem;
-
-  color: ${grayColorDark};
-  font-size: 2rem;
-`;
-
-const IconsBox = styled.div`
-  display: flex;
-  gap: 1rem;
-  font-size: 4rem;
-
-  > :hover {
-    color: ${blackColorLighter};
-    cursor: pointer;
-    transform: scale(1.2);
-  }
-`;
-
-const TitleDialog = styled(TitleForm)`
-  font-size: 3rem;
-`;
-
-const VideoDialogBox = styled.div`
-  background-color: ${grayColorDialog};
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-`;
-
-const VideoCard = styled.div`
-  width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-
-  color: ${grayColorLight};
-  font-size: 1.8rem;
-`;
-
-const IconDeleteVideo = styled(IconDelete)`
-  font-size: 2.5rem;
-
-  :hover {
-    color: ${blackColorLighter};
-    cursor: pointer;
-    transform: scale(1.2);
-  }
-`;
+import {
+  AlertIcon,
+  ButtonContainer,
+  Container,
+  DialogText,
+  CategoryCard,
+  IconsBox,
+  TitleDialog,
+  VideoDialogBox,
+  VideoCard,
+  IconDeleteVideo,
+} from "./elements";
 
 export default function CategoriesList({
   data,
@@ -134,6 +69,21 @@ export default function CategoriesList({
     setVideos(editData.videos);
 
     setOpenEdit(true);
+  }
+
+  function checkVideos() {
+    if (videos.length > 0) {
+      return (
+        <Hyperlink
+          onClick={() => {
+            setOpenVideoList(true);
+            setOpenEdit(false);
+          }}
+        >
+          Vídeos da categoria →
+        </Hyperlink>
+      );
+    }
   }
 
   return (
@@ -214,15 +164,7 @@ export default function CategoriesList({
               />
               {error.description}
             </FieldContainer>
-
-            <Hyperlink
-              onClick={() => {
-                setOpenVideoList(true);
-                setOpenEdit(false);
-              }}
-            >
-              Vídeos da categoria →
-            </Hyperlink>
+            {checkVideos()}
             <ButtonPrimary primary>Salvar</ButtonPrimary>
           </FormStyled>
         </DialogBoxForm>
