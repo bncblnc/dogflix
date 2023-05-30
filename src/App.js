@@ -30,6 +30,17 @@ function App() {
     );
   }
 
+  function deleteVideo(category, id) {
+    setCategoryData(
+      categoryData.map((data) => {
+        if (data.category === category) {
+          data.videos = data.videos.filter((video) => video.id !== id);
+        }
+        return data;
+      })
+    );
+  }
+
   function addCategory(name, color, description) {
     const newCategory = {
       category: name,
@@ -44,10 +55,6 @@ function App() {
 
   function deleteCategory(name) {
     setCategoryData(categoryData.filter((data) => data.category !== name));
-  }
-
-  function openEditCategory(category) {
-    return categoryData.filter((data) => data.category === category)[0];
   }
 
   function editCategory(oldCategory, name, color, description) {
@@ -84,9 +91,9 @@ function App() {
               <NewCategory
                 categoryData={categoryData}
                 submitFunction={addCategory}
-                deleteFunction={deleteCategory}
-                openEdit={openEditCategory}
+                deleteCategory={deleteCategory}
                 editCategory={editCategory}
+                deleteVideo={deleteVideo}
               />
             }
           />

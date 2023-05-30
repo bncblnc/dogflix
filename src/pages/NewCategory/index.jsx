@@ -25,9 +25,9 @@ const Container = styled.div`
 export default function NewCategory({
   categoryData,
   submitFunction,
-  deleteFunction,
-  openEdit,
+  deleteCategory,
   editCategory,
+  deleteVideo,
 }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -95,10 +95,10 @@ export default function NewCategory({
       </FormStyled>
 
       <CategoriesList
-        item={categoryData}
-        deleteFunction={deleteFunction}
-        getData={openEdit}
+        data={categoryData}
+        deleteCategory={deleteCategory}
         editCategory={editCategory}
+        deleteVideo={deleteVideo}
       />
     </main>
   );
