@@ -61,16 +61,34 @@ export default function NewVideo({ categoryData, submitFunction }) {
     setError("");
   }
 
+  function checkRepeatVideo(id) {
+    let repeat = false;
+
+    categoryData
+      .filter((data) => data.category === category)[0]
+      .videos.map((video) => {
+        if (video.id === id) {
+          // newError.linkVideo = <Invalid>URL já existente.</Invalid>;
+          setError({ linkVideo: <Invalid>URL já existente.</Invalid> });
+          repeat = true;
+        }
+      });
+
+    return repeat;
+  }
+
   return (
     <main>
       <FormStyled
         onSubmit={(e) => {
           e.preventDefault();
-          submitFunction(title, idVideo, category, description);
-          setUrl(`/${category.toLowerCase().replace(/\s/g, "")}/${idVideo}`);
-          console.log(url);
-          clearInputs();
-          setSubmitted(true);
+
+          if (!checkRepeatVideo(idVideo)) {
+            submitFunction(title, idVideo, category, description);
+            setUrl(`/${category.toLowerCase().replace(/\s/g, "")}/${idVideo}`);
+            clearInputs();
+            setSubmitted(true);
+          }
         }}
       >
         <TitleForm>Novo Vídeo</TitleForm>
