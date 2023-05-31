@@ -54,7 +54,21 @@ function App() {
   }
 
   function deleteCategory(name) {
-    setCategoryData(categoryData.filter((data) => data.category !== name));
+    const newData = categoryData.filter((data) => data.category !== name);
+
+    let emptyCategory = 0;
+    let canDelete = true;
+
+    newData.map((data) => {
+      if (data.videos.length === 0) emptyCategory++;
+      return data;
+    });
+
+    if (emptyCategory === newData.length) canDelete = false;
+
+    if (canDelete) setCategoryData(newData);
+
+    return canDelete;
   }
 
   function editCategory(oldCategory, name, color, description) {

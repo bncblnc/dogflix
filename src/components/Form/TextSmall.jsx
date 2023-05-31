@@ -24,6 +24,7 @@ export default function TextSmall({
         value={value}
         onChange={(event) => setFunction(event.target.value)}
         onBlur={() => invalidFunction(name, value, setFunction, label, isLink)}
+        maxLength={"59"}
         required
       />
 

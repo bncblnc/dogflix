@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FiAlertTriangle } from "react-icons/fi";
 import { MdDelete as IconDelete } from "react-icons/md";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import { TitleForm } from "../Form";
 import {
   grayColorDialog,
@@ -8,7 +9,9 @@ import {
   primaryColor,
   blackColorLighter,
   grayColorDark,
+  errorColorMedium,
 } from "../UI/variables";
+import { Hyperlink } from "../UI";
 
 export const Container = styled.div`
   width: 100%;
@@ -21,6 +24,11 @@ export const Container = styled.div`
 export const AlertIcon = styled(FiAlertTriangle)`
   color: ${primaryColor};
   font-size: 8rem;
+`;
+
+export const ErrorIcon = styled(AiOutlineCloseCircle)`
+  color: ${errorColorMedium};
+  font-size: 10rem;
 `;
 
 export const DialogText = styled.p`
@@ -100,4 +108,9 @@ export const IconDeleteVideo = styled(IconDelete)`
     cursor: pointer;
     transform: scale(1.2);
   }
+`;
+
+export const BackHyperLink = styled(Hyperlink)`
+  margin-bottom: 2rem;
+  align-self: flex-start;
 `;

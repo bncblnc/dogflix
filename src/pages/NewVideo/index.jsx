@@ -68,10 +68,10 @@ export default function NewVideo({ categoryData, submitFunction }) {
       .filter((data) => data.category === category)[0]
       .videos.map((video) => {
         if (video.id === id) {
-          // newError.linkVideo = <Invalid>URL já existente.</Invalid>;
           setError({ linkVideo: <Invalid>URL já existente.</Invalid> });
           repeat = true;
         }
+        return video;
       });
 
     return repeat;

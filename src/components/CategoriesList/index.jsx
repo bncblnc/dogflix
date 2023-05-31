@@ -18,6 +18,8 @@ import {
   VideoDialogBox,
   VideoCard,
   IconDeleteVideo,
+  BackHyperLink,
+  ErrorIcon,
 } from "./elements";
 
 export default function CategoriesList({
@@ -29,10 +31,11 @@ export default function CategoriesList({
   const [categoryClicked, setCategoryClicked] = useState("");
   const [videoClicked, setVideoClicked] = useState("");
 
-  const [openAlert, setOpenAlert] = useState(false);
+  const [openAlertCategory, setOpenAlertCategory] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [openVideoList, setOpenVideoList] = useState(false);
   const [openAlertVideo, setOpenAlertVideo] = useState(false);
+  const [openAlertError, setOpenAlertError] = useState(false);
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -52,7 +55,7 @@ export default function CategoriesList({
   }
 
   function handleOpenAlert(e) {
-    setOpenAlert(true);
+    setOpenAlertCategory(true);
     setCategoryClicked(e.currentTarget.id);
   }
 
@@ -86,6 +89,24 @@ export default function CategoriesList({
     }
   }
 
+  function renderDeleteCategory(category) {
+    if (data.length > 1)
+      return <IconDelete id={category} onClick={handleOpenAlert} />;
+  }
+
+  function renderDeleteVideo(videos, id) {
+    if (videos.length > 1)
+      return (
+        <IconDeleteVideo
+          id={id}
+          onClick={(e) => {
+            setVideoClicked(e.currentTarget.id);
+            setOpenAlertVideo(true);
+          }}
+        />
+      );
+  }
+
   return (
     <>
       {data.map((obj, index) => (
@@ -93,12 +114,15 @@ export default function CategoriesList({
           {obj.category}
           <IconsBox>
             <IconEdit id={obj.category} onClick={handleOpenEdit} />
-            <IconDelete id={obj.category} onClick={handleOpenAlert} />
+            {renderDeleteCategory(obj.category)}
           </IconsBox>
         </CategoryCard>
       ))}
 
-      <Dialog open={openAlert} onClose={() => setOpenAlert(false)}>
+      <Dialog
+        open={openAlertCategory}
+        onClose={() => setOpenAlertCategory(false)}
+      >
         <DialogBox>
           <Container>
             <AlertIcon />
@@ -107,14 +131,15 @@ export default function CategoriesList({
             </DialogText>
           </Container>
           <ButtonContainer>
-            <ButtonSecondary onClick={() => setOpenAlert(false)}>
+            <ButtonSecondary onClick={() => setOpenAlertCategory(false)}>
               Não
             </ButtonSecondary>
             <ButtonPrimary
               primary
               onClick={() => {
-                deleteCategory(categoryClicked);
-                setOpenAlert(false);
+                if (!deleteCategory(categoryClicked)) setOpenAlertError(true);
+
+                setOpenAlertCategory(false);
               }}
             >
               Sim
@@ -177,26 +202,19 @@ export default function CategoriesList({
         fullWidth={true}
       >
         <VideoDialogBox>
-          <Hyperlink
-            style={{ alignSelf: "flex-start" }}
+          <BackHyperLink
             onClick={() => {
               setOpenVideoList(false);
               setOpenEdit(true);
             }}
           >
             ← Voltar
-          </Hyperlink>
+          </BackHyperLink>
+
           {videos.map((obj, index) => (
             <VideoCard key={index}>
               {obj.title}
-
-              <IconDeleteVideo
-                id={obj.id}
-                onClick={(e) => {
-                  setVideoClicked(e.currentTarget.id);
-                  setOpenAlertVideo(true);
-                }}
-              />
+              {renderDeleteVideo(videos, obj.id)}
             </VideoCard>
           ))}
 
@@ -227,6 +245,15 @@ export default function CategoriesList({
             </DialogBox>
           </Dialog>
         </VideoDialogBox>
+      </Dialog>
+
+      <Dialog open={openAlertError} onClose={() => setOpenAlertError(false)}>
+        <DialogBox>
+          <ErrorIcon />
+          <DialogText style={{ textAlign: "center" }}>
+            Ao menos uma das categorias deve possuir vídeos.
+          </DialogText>
+        </DialogBox>
       </Dialog>
     </>
   );

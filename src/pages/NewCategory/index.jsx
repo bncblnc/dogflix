@@ -52,14 +52,31 @@ export default function NewCategory({
     setError("");
   }
 
+  function checkRepeatCategory(category) {
+    let repeat = false;
+
+    categoryData.map((data) => {
+      if (data.category === category) {
+        setError({ name: <Invalid>Categoria já existente.</Invalid> });
+        repeat = true;
+      }
+      return data;
+    });
+
+    return repeat;
+  }
+
   return (
     <main style={{ minHeight: "calc(100vh - 22rem)" }}>
       <FormStyled
         onSubmit={(e) => {
           e.preventDefault();
-          submitFunction(name, color, description);
-          clearInputs();
-          window.scrollTo(0, document.body.scrollHeight);
+
+          if (!checkRepeatCategory(name)) {
+            submitFunction(name, color, description);
+            clearInputs();
+            window.scrollTo(0, document.body.scrollHeight);
+          }
         }}
       >
         <TitleForm>Nova Categoria</TitleForm>
