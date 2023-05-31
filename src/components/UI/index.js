@@ -13,8 +13,8 @@ export const MarginMedium = styled.div`
 `;
 
 export const Card = styled.img`
-width: 432px;
-height: 246px;
+width: 43.2rem;
+height: 24.6rem;
 border-radius: 0.5rem;
 border: 0.4rem solid;
 cursor pointer;

@@ -15,9 +15,11 @@ const VideoCard = ({ url, idVideo, color, large = false }) => {
 
   if (!large) {
     return (
-      <Link to={`/${url}/${idVideo}`}>
-        <Card src={srcImg} style={{ borderColor: color }} />
-      </Link>
+      <div style={{ margin: "0 1rem" }}>
+        <Link to={`/${url}/${idVideo}`}>
+          <Card src={srcImg} style={{ borderColor: color }} />
+        </Link>
+      </div>
     );
   } else {
     return (
