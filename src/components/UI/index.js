@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {
   bpLarge,
   bpLargest,
+  bpMedium,
   grayColorDialog,
   primaryColor,
   primaryColorDarker,
@@ -58,6 +59,11 @@ export const CardLarge = styled(Card)`
   @media (max-width: 1100px) {
     width: 48.45rem;
     height: 25.01rem;
+  }
+
+  @media (max-width: ${bpMedium}) {
+    width: 58.14rem;
+    height: 30.01rem;
   }
 `;
 

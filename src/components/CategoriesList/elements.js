@@ -10,6 +10,7 @@ import {
   blackColorLighter,
   grayColorDark,
   errorColorMedium,
+  bpMedium,
 } from "../UI/variables";
 import { Hyperlink } from "../UI";
 
@@ -57,6 +58,10 @@ export const CategoryCard = styled.div`
 
   color: ${grayColorDark};
   font-size: 2rem;
+
+  @media (max-width: ${bpMedium}) {
+    width: 95%;
+  }
 `;
 
 export const IconsBox = styled.div`

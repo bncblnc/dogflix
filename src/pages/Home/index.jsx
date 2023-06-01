@@ -8,6 +8,7 @@ export default function Home({ categoryData }) {
     <main>
       <Hero
         category={categoryData[0].category}
+        description={categoryData[0].description}
         url={categoryData[0].url}
         color={categoryData[0].color}
         videos={categoryData[0].videos}
