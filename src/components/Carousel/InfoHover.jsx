@@ -5,7 +5,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { FiAlertCircle } from "react-icons/fi";
-import { bpMedium, grayColorDialog, grayColorLight } from "../UI/variables";
+import {
+  bpMedium,
+  bpSmall,
+  grayColorDialog,
+  grayColorLight,
+} from "../UI/variables";
 import { grayColorDark } from "../UI/variables";
 
 const InfoContainer = styled.div`
@@ -41,6 +46,10 @@ const InfoText = styled.div`
 
   @media (max-width: ${bpMedium}) {
     width: 25rem;
+  }
+
+  @media (max-width: ${bpSmall}) {
+    width: 20rem;
   }
 `;
 

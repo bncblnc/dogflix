@@ -3,6 +3,7 @@ import {
   bpLarge,
   bpLargest,
   bpMedium,
+  bpSmall,
   grayColorDialog,
   primaryColor,
   primaryColorDarker,
@@ -17,10 +18,18 @@ export const MarginLine = styled.div`
 
 export const MarginMedium = styled.div`
   margin-bottom: 3rem;
+
+  @media (max-width: ${bpSmall}) {
+    margin-bottom: 2rem;
+  }
 `;
 
 export const MarginLarge = styled.div`
   margin-bottom: 5rem;
+
+  @media (max-width: ${bpSmall}) {
+    margin-bottom: 4rem;
+  }
 `;
 
 export const Card = styled.img`
@@ -40,6 +49,11 @@ object-fit: cover;
   width: 34.56rem;
   height: 19.68rem;
 }
+
+// @media (max-width: ${bpSmall}) {
+//   width: 30.24rem;
+//   height: 17.22rem;
+// }
 `;
 
 export const CardLarge = styled(Card)`

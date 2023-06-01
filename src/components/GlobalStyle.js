@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { blackColorDark } from "./UI/variables";
+import { blackColorDark, bpSmall } from "./UI/variables";
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -12,6 +12,10 @@ export const GlobalStyle = createGlobalStyle`
 
     @media (max-width: 1100px) {
         font-size: 56.25%;
+      }
+
+      @media (max-width: ${bpSmall}) {
+        font-size: 50%;
       }
 }
 

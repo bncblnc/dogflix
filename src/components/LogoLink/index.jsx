@@ -1,24 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as AluraLogo } from "../../assets/images/logo.svg";
+import logoImg from "../../assets/images/logo1.png";
 import { NavLink } from "react-router-dom";
 
-const Logo = styled(AluraLogo)`
-  height: 100%;
-  flex: 0 0 min-content;
-`;
-
-const Link = styled(NavLink)`
-  height: 100%;
-  width: 0;
-  display: flex;
+const Logo = styled.img`
+  height: 4rem;
 `;
 
 const LogoLink = () => {
   return (
-    <Link to="/">
-      <Logo alt="Logo AluraFlix" />
-    </Link>
+    <NavLink to="/">
+      <Logo src={logoImg} alt="Logo AluraFlix" />
+    </NavLink>
   );
 };
 

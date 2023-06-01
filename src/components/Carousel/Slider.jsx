@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import arrow from "../../assets/images/sliderArrow.png";
 import VideoCard from "./VideoCard";
+import { bpSmall } from "../UI/variables";
 
 const StyledSlider = styled(Slider)`
   width: 90%;
@@ -19,12 +20,16 @@ function Arrow(props) {
 }
 
 const StyledNextArrow = styled(Arrow)`
-  :before {
-    content: url(${arrow});
+  @media (min-width: ${bpSmall}) {
+    :before {
+      content: url(${arrow});
+    }
   }
 `;
 const StyledPrevArrow = styled(StyledNextArrow)`
-  transform: rotate(180deg);
+  @media (min-width: ${bpSmall}) {
+    transform: rotate(180deg);
+  }
 `;
 
 export default function SimpleSlider({ url, videos, color }) {
@@ -46,7 +51,7 @@ export default function SimpleSlider({ url, videos, color }) {
         },
       },
       {
-        breakpoint: 1022,
+        breakpoint: 750,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
