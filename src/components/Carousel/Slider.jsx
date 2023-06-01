@@ -33,6 +33,7 @@ export default function SimpleSlider({ url, videos, color }) {
     infinite: false,
     speed: 300,
     slidesToShow: 3,
+    slidesToScroll: 3,
     variableWidth: true,
     nextArrow: <StyledNextArrow />,
     prevArrow: <StyledPrevArrow />,
@@ -41,12 +42,14 @@ export default function SimpleSlider({ url, videos, color }) {
         breakpoint: 1526,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 1022,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],

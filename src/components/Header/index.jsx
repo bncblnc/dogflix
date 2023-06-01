@@ -6,8 +6,13 @@ import { MarginLine } from "../UI";
 import LogoLink from "../LogoLink";
 import { NavLink } from "react-router-dom";
 
-const StyledHeader = styled.header`
+const Container = styled.div`
   background-color: #000;
+`;
+
+const StyledHeader = styled.header`
+  max-width: 200rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   padding: 2.7rem 4rem;
@@ -23,19 +28,21 @@ const Nav = styled.nav`
 const Header = () => {
   return (
     <>
-      <StyledHeader>
-        <LogoLink />
+      <Container>
+        <StyledHeader>
+          <LogoLink />
 
-        <Nav>
-          <NavLink to="novovideo">
-            <ButtonSecondary>Novo vídeo</ButtonSecondary>
-          </NavLink>
-          <NavLink to="novacategoria">
-            <ButtonSecondary>Nova categoria</ButtonSecondary>
-          </NavLink>
-        </Nav>
-      </StyledHeader>
-      <MarginLine />
+          <Nav>
+            <NavLink to="novovideo">
+              <ButtonSecondary>Novo vídeo</ButtonSecondary>
+            </NavLink>
+            <NavLink to="novacategoria">
+              <ButtonSecondary>Nova categoria</ButtonSecondary>
+            </NavLink>
+          </Nav>
+        </StyledHeader>
+        <MarginLine />
+      </Container>
     </>
   );
 };

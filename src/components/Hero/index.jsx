@@ -9,6 +9,7 @@ import VideoCard from "../Carousel/VideoCard";
 
 const StyledHero = styled.div`
   width: 100%;
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.7fr 2fr 0.4fr 1fr 1fr;

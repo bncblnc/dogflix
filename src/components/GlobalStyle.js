@@ -12,6 +12,12 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    background-color: ${blackColorDark};
+    background-color: ${blackColorDark};    
+}
+
+main{
+    max-width:200rem;
+    margin: 0 auto;
+    min-height: calc(100vh - 17rem);
 }
 `;

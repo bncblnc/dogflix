@@ -12,6 +12,10 @@ export const MarginMedium = styled.div`
   margin-bottom: 3rem;
 `;
 
+export const MarginLarge = styled.div`
+  margin-bottom: 5rem;
+`;
+
 export const Card = styled.img`
 width: 43.2rem;
 height: 24.6rem;

@@ -13,6 +13,7 @@ import ButtonsForm from "../../components/Form/ButtonsForm";
 
 import CategoriesList from "../../components/CategoriesList";
 import styled from "styled-components";
+import { MarginLarge } from "../../components/UI";
 
 const Container = styled.div`
   width: 100%;
@@ -67,7 +68,7 @@ export default function NewCategory({
   }
 
   return (
-    <main style={{ minHeight: "calc(100vh - 22rem)" }}>
+    <main>
       <FormStyled
         onSubmit={(e) => {
           e.preventDefault();
@@ -117,6 +118,7 @@ export default function NewCategory({
         editCategory={editCategory}
         deleteVideo={deleteVideo}
       />
+      <MarginLarge />
     </main>
   );
 }

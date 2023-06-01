@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const StyledFooter = styled.footer`
   width: 100%;
+  position: relative;
   height: 7rem;
   background-color: #000;
   display: flex;
@@ -53,11 +54,17 @@ const NavItem = styled(Link)`
   }
 `;
 
+const MarginFooter = styled(MarginLine)`
+  position: absolute;
+  top: 0;
+  width: inherited;
+`;
+
 const Footer = () => {
   return (
     <>
-      <MarginLine />
       <StyledFooter>
+        <MarginFooter />
         <LogoLink />
         <Container>
           <TextFooter>
