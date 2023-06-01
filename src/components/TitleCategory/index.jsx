@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { grayColorLight } from "../UI/variables";
+import { bpLarge, grayColorLight } from "../UI/variables";
 
 export const TitleCategory = styled.h1`
   color: ${grayColorLight};
@@ -13,10 +13,18 @@ export const TitleCategory = styled.h1`
 
 export const TitleCategoryLarge = styled(TitleCategory)`
   font-size: 6rem;
+
+  @media (max-width: ${bpLarge}) {
+    font-size: 5rem;
+  }
 `;
 
 export const SubtitleCategoryLarge = styled.h2`
   font-size: 4.7rem;
   font-weight: 400;
   color: ${grayColorLight};
+
+  @media (max-width: ${bpLarge}) {
+    font-size: 3.7rem;
+  }
 `;

@@ -39,7 +39,7 @@ export default function SimpleSlider({ url, videos, color }) {
     prevArrow: <StyledPrevArrow />,
     responsive: [
       {
-        breakpoint: 1526,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,

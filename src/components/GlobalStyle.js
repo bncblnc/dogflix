@@ -9,6 +9,10 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-size: 62.5%;
     text-decoration: none;
+
+    @media (max-width: 1100px) {
+        font-size: 56.25%;
+      }
 }
 
 body{
@@ -18,6 +22,6 @@ body{
 main{
     max-width:200rem;
     margin: 0 auto;
-    min-height: calc(100vh - 17rem);
+    min-height: calc(100vh - 18.8rem);
 }
 `;

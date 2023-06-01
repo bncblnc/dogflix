@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { grayColorLight } from "../UI/variables";
+import { bpLarge, grayColorLight } from "../UI/variables";
 import { SubtitleCategoryLarge, TitleCategoryLarge } from "../TitleCategory";
 import { MarginMedium } from "../UI";
 import SimpleSlider from "../Carousel/Slider";
@@ -15,6 +15,10 @@ const StyledHero = styled.div`
   grid-template-rows: 0.7fr 2fr 0.4fr 1fr 1fr;
   align-items: center;
   gap: 0 4rem;
+
+  @media (max-width: ${bpLarge}) {
+    height: auto;
+  }
 `;
 
 const Container = styled.div`
@@ -35,6 +39,10 @@ const Info = styled.p`
   font-weight: 300;
   font-size: 1.9rem;
   line-height: 2.5rem;
+
+  @media (max-width: ${bpLarge}) {
+    font-size: 1.7rem;
+  }
 `;
 
 const VideoIframe = styled.iframe`

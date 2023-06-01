@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { grayColorDialog, primaryColor, primaryColorDarker } from "./variables";
+import {
+  bpLarge,
+  bpLargest,
+  grayColorDialog,
+  primaryColor,
+  primaryColorDarker,
+} from "./variables";
 import { Link } from "react-router-dom";
 
 export const MarginLine = styled.div`
@@ -23,11 +29,36 @@ border-radius: 0.5rem;
 border: 0.4rem solid;
 cursor pointer;
 object-fit: cover;
+
+@media (max-width: ${bpLargest}) {
+  width: 38.88rem;
+  height: 22.14rem;
+}
+
+@media (max-width: ${bpLarge}) {
+  width: 34.56rem;
+  height: 19.68rem;
+}
 `;
 
 export const CardLarge = styled(Card)`
   width: 64.6rem;
   height: 33.35rem;
+
+  @media (max-width: ${bpLargest}) {
+    width: 58.14rem;
+    height: 30.01rem;
+  }
+
+  @media (max-width: ${bpLarge}) {
+    width: 51.68rem;
+    height: 26.68rem;
+  }
+
+  @media (max-width: 1100px) {
+    width: 48.45rem;
+    height: 25.01rem;
+  }
 `;
 
 export const DialogBox = styled.div`
