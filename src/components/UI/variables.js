@@ -8,6 +8,7 @@ export const blackColorLighter = "#9E9E9E";
 
 export const grayColorInput = "#53585D";
 export const grayColorDialog = "#333333";
+
 export const grayColorDark = "#C2C2C2";
 export const grayColorMedium = "#E5E5E5";
 export const grayColorLight = "#F5F5F5";
@@ -23,8 +24,6 @@ export const courseColor8 = "#9CD33B";
 
 export const errorColorDark = "#C62828";
 export const errorColorMedium = "#E53935";
-export const errorColorLight = "#FCE7E7";
-
 export const successColor = "#37b24d";
 
 export const bpLargest = "1526px";

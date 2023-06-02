@@ -9,6 +9,14 @@ export const TitleCategory = styled.h1`
   padding: 1rem 2rem;
   border-radius: 0.4rem;
   background-color: ${(props) => props.color};
+
+  @media (max-width: 450px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const TitleCategoryLarge = styled(TitleCategory)`
@@ -16,6 +24,14 @@ export const TitleCategoryLarge = styled(TitleCategory)`
 
   @media (max-width: ${bpLarge}) {
     font-size: 5rem;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 3rem;
   }
 `;
 

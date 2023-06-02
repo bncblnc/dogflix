@@ -20,7 +20,8 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    background-color: ${blackColorDark};    
+    background-color: ${blackColorDark};
+  
 }
 
 main{
@@ -28,4 +29,6 @@ main{
     margin: 0 auto;
     min-height: calc(100vh - 18.8rem);
 }
+
+
 `;

@@ -51,6 +51,11 @@ const InfoText = styled.div`
   @media (max-width: ${bpSmall}) {
     width: 20rem;
   }
+
+  @media (max-width: 420px) {
+    top: 4rem;
+    left: -8.5rem;
+  }
 `;
 
 const InfoHover = ({ description }) => {

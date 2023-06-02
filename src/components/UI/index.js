@@ -50,10 +50,15 @@ object-fit: cover;
   height: 19.68rem;
 }
 
-// @media (max-width: ${bpSmall}) {
-//   width: 30.24rem;
-//   height: 17.22rem;
-// }
+@media (max-width: 450px) {
+  width: 30.24rem;
+  height: 17.22rem;
+}
+
+@media (max-width: 320px) {
+  width: 28.08rem;
+  height: 15.99rem;
+}
 `;
 
 export const CardLarge = styled(Card)`
@@ -78,6 +83,26 @@ export const CardLarge = styled(Card)`
   @media (max-width: ${bpMedium}) {
     width: 58.14rem;
     height: 30.01rem;
+  }
+
+  @media (max-width: 520px) {
+    width: 51.68rem;
+    height: 26.68rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 45.22rem;
+    height: 23.34rem;
+  }
+
+  @media (max-width: 370px) {
+    width: 38.88rem;
+    height: 22.14rem;
+  }
+
+  @media (max-width: 320px) {
+    width: 34.56rem;
+    height: 19.68rem;
   }
 `;
 

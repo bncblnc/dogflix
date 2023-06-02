@@ -152,7 +152,7 @@ const NavMobile = () => {
   return (
     <Container>
       <NavCheckbox type="checkbox" id="navi-toggle" />
-      <NavButton for="navi-toggle">
+      <NavButton htmlFor="navi-toggle">
         <NavIcon className="icon" />
       </NavButton>
 
@@ -160,10 +160,10 @@ const NavMobile = () => {
 
       <StyledNav>
         <NavContainer>
-          <NavItem to="novovideo" onClick={closeNav}>
+          <NavItem to="novovideo" onClick={() => closeNav()}>
             Novo vídeo
           </NavItem>
-          <NavItem to="novacategoria" onClick={closeNav}>
+          <NavItem to="novacategoria" onClick={() => closeNav()}>
             Nova categoria
           </NavItem>
         </NavContainer>

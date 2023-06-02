@@ -31,6 +31,14 @@ const Container = styled.div`
   display: flex;
   gap: 3rem;
   align-items: center;
+
+  @media (max-width: 370px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 290px) {
+    gap: 1rem;
+  }
 `;
 
 const TextFooter = styled.p`
@@ -41,6 +49,16 @@ const TextFooter = styled.p`
   line-height: 1.2;
   border-right: 2px solid ${grayColorDark};
   padding-right: 3rem;
+
+  @media (max-width: 370px) {
+    font-size: 1.1rem;
+    letter-spacing: 0;
+    padding-right: 2rem;
+  }
+
+  @media (max-width: 290px) {
+    padding-right: 1rem;
+  }
 `;
 
 const NavStyled = styled.nav`

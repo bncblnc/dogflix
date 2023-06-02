@@ -32,7 +32,7 @@ const Container = styled.div`
   padding: 0 5rem;
   grid-column: 1;
   grid-row: 2 / 3;
-  z-index: 3;
+  z-index: 4;
 
   @media (max-width: ${bpMedium}) {
     grid-column: 1 / -1;

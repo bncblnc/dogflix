@@ -7,11 +7,16 @@ import "slick-carousel/slick/slick-theme.css";
 
 import arrow from "../../assets/images/sliderArrow.png";
 import VideoCard from "./VideoCard";
-import { bpSmall } from "../UI/variables";
+import { bpSmall, bpSmallest } from "../UI/variables";
 
 const StyledSlider = styled(Slider)`
   width: 90%;
   margin: 0 auto;
+
+  @media (max-width: ${bpSmallest}) {
+    width: auto;
+    margin: 0;
+  }
 `;
 
 function Arrow(props) {
@@ -25,10 +30,18 @@ const StyledNextArrow = styled(Arrow)`
       content: url(${arrow});
     }
   }
+
+  @media (max-width: ${bpSmallest}) {
+    display: none;
+  }
 `;
 const StyledPrevArrow = styled(StyledNextArrow)`
   @media (min-width: ${bpSmall}) {
     transform: rotate(180deg);
+  }
+
+  @media (max-width: ${bpSmallest}) {
+    display: none;
   }
 `;
 
