@@ -5,6 +5,8 @@ import { ButtonSecondary } from "../Button";
 import { MarginLine } from "../UI";
 import LogoLink from "../LogoLink";
 import { NavLink } from "react-router-dom";
+import { bpSmall } from "../UI/variables";
+import NavMobile from "./NavMobile";
 
 const Container = styled.div`
   background-color: #000;
@@ -20,9 +22,13 @@ const StyledHeader = styled.header`
   align-items: center;
 `;
 
-const Nav = styled.nav`
+const NavButtons = styled.nav`
   display: flex;
   gap: 2rem;
+
+  @media (max-width: ${bpSmall}) {
+    display: none;
+  }
 `;
 
 const Header = () => {
@@ -32,14 +38,16 @@ const Header = () => {
         <StyledHeader>
           <LogoLink />
 
-          <Nav>
+          <NavButtons>
             <NavLink to="novovideo">
               <ButtonSecondary>Novo vídeo</ButtonSecondary>
             </NavLink>
             <NavLink to="novacategoria">
               <ButtonSecondary>Nova categoria</ButtonSecondary>
             </NavLink>
-          </Nav>
+          </NavButtons>
+
+          <NavMobile />
         </StyledHeader>
         <MarginLine />
       </Container>

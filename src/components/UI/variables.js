@@ -31,3 +31,4 @@ export const bpLargest = "1526px";
 export const bpLarge = "1239px";
 export const bpMedium = "950px";
 export const bpSmall = "750px";
+export const bpSmallest = "600px";

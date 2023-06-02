@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { bpLarge, bpMedium, grayColorLight } from "../UI/variables";
+import { bpLarge, bpMedium, bpSmallest, grayColorLight } from "../UI/variables";
 import { SubtitleCategoryLarge, TitleCategoryLarge } from "../TitleCategory";
 import { MarginMedium } from "../UI";
 import SimpleSlider from "../Carousel/Slider";
@@ -42,6 +42,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (max-width: ${bpSmallest}) {
+    align-items: flex-start;
   }
 `;
 
