@@ -80,7 +80,7 @@ const NavItem = styled(Link)`
 
   :hover {
     color: ${primaryColor};
-    transform: scale(1.4);
+    transform: scale(1.2);
   }
 `;
 

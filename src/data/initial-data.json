@@ -1,90 +1,118 @@
 [
   {
-    "category": "Front End",
-    "url": "frontend",
-    "description": "Formação Front End na Alura",
-    "color": "#6BD1FF",
+    "category": "Escola",
+    "url": "escola",
+    "description": "Hora de aprender para se tornar um cachorro bonzinho!",
+    "color": "#6B5BE2",
     "videos": [
       {
-        "id": "Z-N5Fr9P-GU",
-        "title": "Transformação Digital",
-        "description": "Entenda o que é Transformação Digital, quais os caminhos a se evitar e qual deve ser o seu objetivo para começar a fazer uma transformação digital na sua empresa."
+        "id": "KmOifwloghI",
+        "title": "Senta! Fica!",
+        "description": "Os comandos para cães podem reforçar comportamentos positivos, e melhorar a saúde física e mental do seu amigo. Confira essas dicas para ensinar seu pet em casa!"
       },
       {
-        "id": "6IuQUgeDPg0",
-        "title": "O que é React JS?",
-        "description": "Afinal, o que é React JS? Neste vídeo, Vanessa Tonini e Mario Souto explicam isto para você falando sobre como esta ferramenta surgiu, para que ela serve, quais são suas aplicações e relação com outras ferramentas e como começar a trabalhar com ele. "
+        "id": "taZ1FU5TEnc",
+        "title": "Xixi no lugar certo!",
+        "description": "Aprenda como ensinar o seu cachorrinho a fazer as necessidades no lugar certo."
       },
       {
-        "id": "KdQa4Rd6K1A",
-        "title": "useState: aprenda o React Hook",
-        "description": "Entenda neste tutorial de Hooks React, sobre o que é o useState e porque usá-lo é importante para buscar dados, atualizar estados e renderizar a sua aplicação. Aprenda a como usar o useState na prática e com diferentes soluções para resolver exemplos do dia a dia."
+        "id": "z-gww2OcqKQ",
+        "title": "Como começar adestrar?",
+        "description": "Você quer ter um cão obediente? Nesse vídeo irei mostrar como você pode educar o seu cão em casa, a qualquer momento."
       },
       {
-        "id": "35jb4FeQSe4",
-        "title": "Como começar com React?",
-        "description": "Aprenda como começar a programar com React."
+        "id": "wF5q4XwRqAU",
+        "title": "Comandos básicos",
+        "description": "Quer saber como adestrar um cachorro com dicas simples e fáceis? Neste vídeo você vai aprender como adestrar um cachorro ensinando a ele 6 comandos básicos!"
       },
       {
-        "id": "2-OAUXA4IcE",
-        "title": "Diferenças entre React e React Native",
-        "description": "Neste vídeo, o Luiz Fernando e a Natália Thiel, Instrutor e Instrutora aqui na Alura, falam um pouco mais sobre as diferencias e similaridades do React JS e o React Native e como é usar ambas as ferramentas em seu projeto mobile."
+        "id": "OXaR1zUL_jo",
+        "title": "Cão Hiperativo?",
+        "description": "Aprenda passo a passo de como adestrar um cachorro hiperativo e ter um cãozinho calmo."
       }
     ]
   },
   {
-    "category": "Data Science",
-    "url": "datascience",
-    "description": "Formação Data Science na Alura",
-    "color": "#69953B",
+    "category": "Comida",
+    "url": "comida",
+    "description": "Receitinhas deliciosas para encher a barriguinha e ter energia para brincar!",
+    "color": "#9CD33B",
     "videos": [
       {
-        "id": "Kk3vBRqKA2o",
-        "title": "Inteligência artificial",
-        "description": "Inteligência Artificial ainda é um assunto muito discutido em diversas áreas: tecnologia, ética, religião… e muito ainda se especula sobre seus limites e o que pode se tornar no futuro e neste #HipstersPontoTube o host Paulo Silveira bate um papo com Guilherme Silveira sobre esse assunto polêmico."
+        "id": "ur3d92sVvIw",
+        "title": "Comida Natural",
+        "description": "Receita de comida saudável e caseira que você não pode perder. O arroz e as verduras são uma peça chave da alimentação canina natural."
       },
       {
-        "id": "K-eaT4V8j-w",
-        "title": "Data Science: por onde eu começo?",
-        "description": "Nesse primeiro episódio de 'Universo Data Science' vamos descobrir como a ideia da ciência de dados surgiu e acompanhar a sua evolução, dos anos 80 até hoje e sua aplicação na atualidade."
+        "id": "5HQq29de8Qk",
+        "title": "Biscoito para cachorro",
+        "description": "Não é um pet cookie que fica crocante, portanto até aquele seu cãozinho mais velhusquinho pode conseguir comer. Aproveite e experimente você também!"
       },
       {
-        "id": "qYhixp5qxTc",
-        "title": "Aplicações de Machine Learning",
-        "description": "Você sabia que o Machine Learning tem aplicações onde você nem imagina?"
-      },
-      {
-        "id": "5b9Z8toVaAU",
-        "title": "O que é Data Science?",
-        "description": "Python é o novo Excel? Para que serve o R, Pandas e Jupyter? E qual é, afinal, a diferença entre o Data Science, Business Intelligence e Machine Learning? Descubra no primeiro episódio de Hipsters Ponto Tube!"
+        "id": "0Taa7j41k6s",
+        "title": "Bolo para cachorro",
+        "description": "Aprenda a fazer um bolo delicioso pro seu cachorro! Super fácil, rápido, barato e simples de fazer."
       }
     ]
   },
   {
-    "category": "Mobile",
-    "url": "mobile",
-    "description": "Formação Mobile da Alura",
-    "color": "#FFBA05",
+    "category": "Moda",
+    "url": "moda",
+    "description": "Dicas de looks para ficar quentinho e bonito!",
+    "color": "#DC6EBE",
     "videos": [
       {
-        "id": "4AH9H_dx_7g",
-        "title": "Dev IOS",
-        "description": "Quais os próximos passos? Quais os padrões de projeto? A Giovanna Moeller conta sua experiência para o Mario Souto em um bate papo super legal sobre seu desenvolvimento na área de mobile e iOS."
+        "id": "6jDkbch7y0M",
+        "title": "Dog's Fashion Show",
+        "description": "Fomos a um desfile muito fashion para cachorros para ver as novidades. Qual roupa vocês mais gostaram?"
       },
       {
-        "id": "uXA8jLSuPNA",
-        "title": "Temas e cores no SwiftUI",
-        "description": "Giovanna Moeller, Instrutora da Escola de Mobile da Alura, vai ensinar você a criar temas e estilos de cores no Swift!"
+        "id": "woKmGvkKK4w",
+        "title": "DIY - Moda Pet",
+        "description": "17 melhores dicas e truques de costura para fazer roupas e acessórios para cachorros e gatos."
       },
       {
-        "id": "ly8e6WB0YQo",
-        "title": "De Views para Jetpack Compose",
-        "description": "Aprenda nesse tutorial como fazer a integração e a migração de projetos (apps) que utilizam sistemas de views  para o Jetpack Compose."
+        "id": "Ie8Das9QyJk",
+        "title": "Roupa cirúrgica",
+        "description": "Aprenda nesse tutorial como fazer roupinha cirúrgica para seu cachorro."
       },
       {
-        "id": "fWscDFHKgw8",
-        "title": "Desenvolvimento Android",
-        "description": "Um episódio focado no desenvolvimento de aplicações Android. Neste bate-papo, Paulo Silveira e Felipe Torres conversam sobre os primeiros passos para começar a desenvolver, quais as principais ferramentas do desenvolvimento mobile, como colocar sua aplicação no ar e mais!"
+        "id": "ht1r_z_xs1I",
+        "title": "Roupa de crochê",
+        "description": "Tutorial de como fazer roupinha de crochê para seu AUmigo!"
+      }
+    ]
+  },
+  {
+    "category": "AUstro de cinema",
+    "url": "austrodecinema",
+    "description": "Vídeos de cachorrinhos famosos para se inspirar e se divertir!",
+    "color": "#FF8C2A",
+    "videos": [
+      {
+        "id": "jdpg0yy5eQE",
+        "title": "Ruim pra cachorro",
+        "description": "Dizem que o cachorro é o melhor amigo do homem, mas e se o homem for um vacilão? Nesse caso, pode ser hora de uma doce vingança, no estilo cachorrinho."
+      },
+      {
+        "id": "mT5niq0-D6M",
+        "title": "Clifford",
+        "description": "Emily conhece um criador de animais mágico que lhe dá um cachorrinho vermelho. Entretanto, ela nunca imaginou acordar e encontrar um cão gigante de três metros em seu pequeno apartamento em Nova York. "
+      },
+      {
+        "id": "DmZAqjuNUa4",
+        "title": "Frankenweenie",
+        "description": "Quando o cão morre atropelado, Victor fica triste e inconformado. Inspirado por uma aula de ciências que teve na escola, ele constrói uma máquina que permita reviver Sparky."
+      },
+      {
+        "id": "4vzzsQQ48RA",
+        "title": "Pets",
+        "description": "Max é um cachorrinho que mora em um apartamento de Manhattan. Quando seu dono traz para casa um viralata desleixado chamado Duke, Max não gosta nada."
+      },
+      {
+        "id": "yeegSMOA0fk",
+        "title": "SCOOBY!",
+        "description": "Salsicha e Scooby tem uma conexão instantânea envolvendo comida em seu primeiro encontro, e logo se unem aos jovens detetives Fred, Velma e Daphne para formar a Mistério S/A."
       }
     ]
   }
