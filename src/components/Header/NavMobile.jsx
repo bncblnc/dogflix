@@ -19,8 +19,9 @@ const Container = styled.div`
 
 const StyledNav = styled.nav`
   height: 100vh;
-
   position: fixed;
+  display: flex;
+  align-items: center;
   top: 0;
   left: 0;
   z-index: 1500;
@@ -28,28 +29,24 @@ const StyledNav = styled.nav`
   opacity: 0;
   width: 0;
   visibility: hidden;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 `;
 
 const NavContainer = styled.div`
   width: 100%;
-  padding-top: 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  transition: all 0.4s;
 `;
 
 const NavCheckbox = styled.input`
   display: none;
 
   :checked ~ .background {
-    transform: scale(80);
     position: fixed;
-    top: 3rem;
-    right: 4.5rem;
     z-index: 1000;
+    width: 100vw;
+    height: 100vh;
   }
 
   :checked ~ nav {
@@ -118,12 +115,11 @@ const NavIcon = styled.span`
 `;
 
 const NavBackground = styled.div`
-  height: 3.5rem;
-  width: 3.5rem;
-  border-radius: 25%;
+  height: 0rem;
+  width: 0rem;
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0rem;
+  right: 0rem;
   background-color: ${grayColorDark__2};
 
   transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);

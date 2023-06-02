@@ -20,8 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    background-color: ${grayColorDark__1};
-  
+    background-color: ${grayColorDark__1};  
 }
 
 main{
