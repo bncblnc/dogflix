@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import { FieldContainer, StyledLabel } from ".";
-import { grayColorInput } from "../UI/variables";
+import { grayColorDark__3 } from "../UI/variables";
 
 const StyledInput = styled.input`
-  background-color: ${grayColorInput};
+  background-color: ${grayColorDark__3};
   padding: 0 0.3rem;
   width: 6rem;
   height: 4.2rem;

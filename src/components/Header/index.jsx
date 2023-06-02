@@ -5,11 +5,11 @@ import { ButtonSecondary } from "../Button";
 import { MarginLine } from "../UI";
 import LogoLink from "../LogoLink";
 import { NavLink } from "react-router-dom";
-import { bpSmall } from "../UI/variables";
+import { blackColor, bpSmall } from "../UI/variables";
 import NavMobile from "./NavMobile";
 
 const Container = styled.div`
-  background-color: #000;
+  background-color: ${blackColor};
 `;
 
 const StyledHeader = styled.header`

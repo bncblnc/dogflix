@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import {
-  errorColorMedium,
-  grayColorInput,
-  grayColorLight,
-  grayColorMedium,
+  errorColor,
+  grayColorDark__3,
+  grayColorLight__1,
+  grayColorLight__2,
   primaryColor,
 } from "../UI/variables";
 
 export const TitleForm = styled.h1`
-  color: ${grayColorLight};
+  color: ${grayColorLight__1};
   font-weight: 400;
   font-size: 4rem;
 `;
@@ -24,8 +24,8 @@ export const FormStyled = styled.form`
 `;
 
 export const fieldStyled = () => `
-  color: ${grayColorMedium};
-  background-color: ${grayColorInput};
+  color: ${grayColorLight__2};
+  background-color: ${grayColorDark__3};
   font-size: 1.8rem;
   padding: 1rem 1rem 1rem 0.5rem;
   display: block;
@@ -83,7 +83,7 @@ export const FieldContainer = styled.div`
 `;
 
 export const StyledLabel = styled.label`
-  color: ${(props) => (props.static ? primaryColor : grayColorLight)};
+  color: ${(props) => (props.static ? primaryColor : grayColorLight__1)};
   font-size: ${(props) => (props.static ? "1.4rem" : "1.8rem")};
   font-weight: normal;
   position: absolute;
@@ -94,7 +94,7 @@ export const StyledLabel = styled.label`
 `;
 
 export const Invalid = styled.p`
-  color: ${errorColorMedium};
+  color: ${errorColor};
   font-size: 1.4rem;
   font-weight: normal;
   position: absolute;
@@ -104,5 +104,5 @@ export const Invalid = styled.p`
   z-index: 2;
 
   width: 100%;
-  border-top: 0.3rem solid ${errorColorMedium};
+  border-top: 0.3rem solid ${errorColor};
 `;

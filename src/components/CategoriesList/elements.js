@@ -4,12 +4,12 @@ import { MdDelete as IconDelete } from "react-icons/md";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { TitleForm } from "../Form";
 import {
-  grayColorDialog,
-  grayColorLight,
+  grayColorDark__2,
+  grayColorLight__1,
   primaryColor,
-  blackColorLighter,
-  grayColorDark,
-  errorColorMedium,
+  grayColorLight__4,
+  grayColorLight__3,
+  errorColor,
   bpMedium,
 } from "../UI/variables";
 import { Hyperlink } from "../UI";
@@ -28,13 +28,13 @@ export const AlertIcon = styled(FiAlertTriangle)`
 `;
 
 export const ErrorIcon = styled(AiOutlineCloseCircle)`
-  color: ${errorColorMedium};
+  color: ${errorColor};
   font-size: 10rem;
 `;
 
 export const DialogText = styled.p`
   font-size: 2.1rem;
-  color: ${grayColorLight};
+  color: ${grayColorLight__1};
 `;
 
 export const ButtonContainer = styled.div`
@@ -56,7 +56,7 @@ export const CategoryCard = styled.div`
   border-top: 5px solid;
   border-radius: 0.3rem;
 
-  color: ${grayColorDark};
+  color: ${grayColorLight__3};
   font-size: 2rem;
 
   @media (max-width: ${bpMedium}) {
@@ -70,7 +70,7 @@ export const IconsBox = styled.div`
   font-size: 4rem;
 
   > :hover {
-    color: ${blackColorLighter};
+    color: ${grayColorLight__4};
     cursor: pointer;
     transform: scale(1.2);
   }
@@ -81,7 +81,7 @@ export const TitleDialog = styled(TitleForm)`
 `;
 
 export const VideoDialogBox = styled.div`
-  background-color: ${grayColorDialog};
+  background-color: ${grayColorDark__2};
   width: 100%;
   padding: 2rem;
   display: flex;
@@ -101,7 +101,7 @@ export const VideoCard = styled.div`
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
 
-  color: ${grayColorLight};
+  color: ${grayColorLight__1};
   font-size: 1.8rem;
 `;
 
@@ -109,7 +109,7 @@ export const IconDeleteVideo = styled(IconDelete)`
   font-size: 2.5rem;
 
   :hover {
-    color: ${blackColorLighter};
+    color: ${grayColorLight__4};
     cursor: pointer;
     transform: scale(1.2);
   }

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import {
-  blackColorDark,
-  blackColorLighter,
-  grayColorLight,
+  grayColorDark__1,
+  grayColorLight__4,
+  grayColorLight__1,
   primaryColor,
+  whiteColor,
 } from "../UI/variables";
 
 export const Button = styled.button`
@@ -20,8 +21,8 @@ export const Button = styled.button`
 export const ButtonPrimary = styled(Button)`
   border: none;
   background-color: ${(props) =>
-    props.primary ? primaryColor : blackColorLighter};
-  color: ${(props) => (props.primary ? "#fff" : blackColorDark)};
+    props.primary ? primaryColor : grayColorLight__4};
+  color: ${(props) => (props.primary ? whiteColor : grayColorDark__1)};
 
   :hover {
     opacity: 0.85;
@@ -29,8 +30,8 @@ export const ButtonPrimary = styled(Button)`
 `;
 
 export const ButtonSecondary = styled(Button)`
-  color: #fff;
-  border: 1px solid ${grayColorLight};
+  color: ${whiteColor};
+  border: 1px solid ${grayColorLight__1};
   background-color: transparent;
 
   :hover {

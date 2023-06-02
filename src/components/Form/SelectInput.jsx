@@ -9,9 +9,9 @@ import {
   selectFieldAnimation,
 } from ".";
 import {
-  grayColorInput,
-  grayColorLight,
-  grayColorMedium,
+  grayColorDark__3,
+  grayColorLight__1,
+  grayColorLight__2,
   primaryColor,
 } from "../UI/variables";
 
@@ -31,7 +31,7 @@ const ArrowIcon = styled(Icon)`
   align-items: center;
 
   font-size: 1.2rem;
-  color: ${grayColorLight};
+  color: ${grayColorLight__1};
   transition: all 0.5s;
 `;
 
@@ -43,7 +43,7 @@ const OptionsBox = styled.div`
   overflow-y: auto;
   z-index: 10;
 
-  background-color: ${grayColorInput};
+  background-color: ${grayColorDark__3};
 
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
@@ -52,7 +52,7 @@ const OptionsBox = styled.div`
 `;
 
 const OptionDiv = styled.div`
-  color: ${grayColorMedium};
+  color: ${grayColorLight__2};
   font-size: 1.8rem;
   padding: 1rem 0.5rem;
   border-bottom: 1px solid #656565;

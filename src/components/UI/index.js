@@ -4,9 +4,9 @@ import {
   bpLargest,
   bpMedium,
   bpSmall,
-  grayColorDialog,
+  grayColorDark__2,
   primaryColor,
-  primaryColorDarker,
+  primaryColorDark,
 } from "./variables";
 import { Link } from "react-router-dom";
 
@@ -107,7 +107,7 @@ export const CardLarge = styled(Card)`
 `;
 
 export const DialogBox = styled.div`
-  background-color: ${grayColorDialog};
+  background-color: ${grayColorDark__2};
   max-width: 45rem;
   padding: 2rem;
   display: flex;
@@ -117,7 +117,7 @@ export const DialogBox = styled.div`
 `;
 
 export const DialogBoxForm = styled.div`
-  background-color: ${grayColorDialog};
+  background-color: ${grayColorDark__2};
 `;
 
 export const Hyperlink = styled(Link)`
@@ -135,7 +135,7 @@ export const Hyperlink = styled(Link)`
 
   :hover,
   :active {
-    color: ${primaryColorDarker};
-    border-color: ${primaryColorDarker};
+    color: ${primaryColorDark};
+    border-color: ${primaryColorDark};
   }
 `;

@@ -5,7 +5,12 @@ import { TbBrandGithub as IconGithub } from "react-icons/tb";
 import { FiLinkedin as IconLinkedin } from "react-icons/fi";
 
 import { MarginLine } from "../UI";
-import { bpSmall, grayColorDark, primaryColor } from "../UI/variables";
+import {
+  blackColor,
+  bpSmall,
+  grayColorLight__3,
+  primaryColor,
+} from "../UI/variables";
 import LogoLink from "../LogoLink";
 import { Link } from "react-router-dom";
 
@@ -13,7 +18,7 @@ const StyledFooter = styled.footer`
   width: 100%;
   position: relative;
   height: 7rem;
-  background-color: #000;
+  background-color: ${blackColor};
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -43,11 +48,11 @@ const Container = styled.div`
 
 const TextFooter = styled.p`
   text-align: center;
-  color: ${grayColorDark};
+  color: ${grayColorLight__3};
   font-size: 1.2rem;
   letter-spacing: 1px;
   line-height: 1.2;
-  border-right: 2px solid ${grayColorDark};
+  border-right: 2px solid ${grayColorLight__3};
   padding-right: 3rem;
 
   @media (max-width: 370px) {
@@ -68,7 +73,7 @@ const NavStyled = styled.nav`
 `;
 
 const NavItem = styled(Link)`
-  color: ${grayColorDark};
+  color: ${grayColorLight__3};
   font-size: 5rem;
 
   transition: all 0.2s;

@@ -2,7 +2,10 @@ import React from "react";
 import Header from "../../components/Header";
 import styled from "styled-components";
 import { TbFaceIdError as AlertIcon } from "react-icons/tb";
-import { errorColorDark, grayColorDark } from "../../components/UI/variables";
+import {
+  errorColorDark,
+  grayColorLight__3,
+} from "../../components/UI/variables";
 
 const Container = styled.main`
   width: 100vw;
@@ -16,7 +19,7 @@ const Container = styled.main`
   text-transform: uppercase;
   font-size: 6rem;
   font-weight: 600;
-  background-color: ${grayColorDark};
+  background-color: ${grayColorLight__3};
 `;
 
 const IconDiv = styled.div`

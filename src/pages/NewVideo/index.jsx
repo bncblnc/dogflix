@@ -13,7 +13,7 @@ import ButtonsForm from "../../components/Form/ButtonsForm";
 import { Dialog } from "@mui/material";
 import { DialogBox, Hyperlink } from "../../components/UI";
 import { BsCheck2Circle } from "react-icons/bs";
-import { grayColorLight, successColor } from "../../components/UI/variables";
+import { grayColorLight__1, successColor } from "../../components/UI/variables";
 
 const SuccessfullyIcon = styled(BsCheck2Circle)`
   color: ${successColor};
@@ -23,7 +23,7 @@ const SuccessfullyIcon = styled(BsCheck2Circle)`
 const DialogText = styled.p`
   font-size: 3rem;
   font-weight: 600;
-  color: ${grayColorLight};
+  color: ${grayColorLight__1};
 `;
 
 export default function NewVideo({ categoryData, submitFunction }) {

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { blackColorDark, bpSmall } from "./UI/variables";
+import { grayColorDark__1, bpSmall } from "./UI/variables";
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    background-color: ${blackColorDark};
+    background-color: ${grayColorDark__1};
   
 }
 

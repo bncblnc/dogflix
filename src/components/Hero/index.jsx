@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { bpLarge, bpMedium, bpSmallest, grayColorLight } from "../UI/variables";
+import {
+  bpLarge,
+  bpMedium,
+  bpSmallest,
+  grayColorLight__1,
+} from "../UI/variables";
 import { SubtitleCategoryLarge, TitleCategoryLarge } from "../TitleCategory";
 import { MarginMedium } from "../UI";
 import SimpleSlider from "../Carousel/Slider";
@@ -70,7 +75,7 @@ const SliderStyle = styled.div`
 `;
 
 const Info = styled.p`
-  color: ${grayColorLight};
+  color: ${grayColorLight__1};
   font-weight: 300;
   font-size: 1.9rem;
   line-height: 2.5rem;

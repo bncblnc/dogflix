@@ -8,17 +8,17 @@ import { FiAlertCircle } from "react-icons/fi";
 import {
   bpMedium,
   bpSmall,
-  grayColorDialog,
-  grayColorLight,
+  grayColorDark__2,
+  grayColorLight__1,
 } from "../UI/variables";
-import { grayColorDark } from "../UI/variables";
+import { grayColorLight__3 } from "../UI/variables";
 
 const InfoContainer = styled.div`
   position: relative;
 `;
 
 const InfoIcon = styled(FiAlertCircle)`
-  color: ${grayColorDark};
+  color: ${grayColorLight__3};
   font-size: 3rem;
 
   :hover ~ div {
@@ -34,12 +34,12 @@ const InfoText = styled.div`
   z-index: 10;
 
   padding: 1rem;
-  background-color: ${grayColorDialog};
+  background-color: ${grayColorDark__2};
   border-radius: 2px;
   font-size: 1.8rem;
   font-weight: 300;
   text-align: center;
-  color: ${grayColorLight};
+  color: ${grayColorLight__1};
 
   opacity: 0;
   transition: all 0.2s;
