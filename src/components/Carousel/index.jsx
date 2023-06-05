@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { TitleCategory } from "../TitleCategory";
 import SimpleSlider from "./Slider";
 import InfoHover from "./InfoHover";
+import { bpSmallest } from "../UI/variables";
 
 const Container = styled.div`
   width: 100%;
@@ -15,6 +16,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: ${bpSmallest}) {
+    padding: 5rem 3rem 3rem 1rem;
+  }
 `;
 
 const Carousel = (props) => {

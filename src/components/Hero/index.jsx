@@ -51,6 +51,7 @@ const Container = styled.div`
 
   @media (max-width: ${bpSmallest}) {
     align-items: flex-start;
+    padding: 3rem 0 0 1rem;
   }
 `;
 
