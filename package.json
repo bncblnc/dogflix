@@ -21,6 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
