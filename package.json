@@ -20,9 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "start": "react-scripts start --openssl-legacy-provider start",
+    "build": "react-scripts build --openssl-legacy-provider build"
   },
   "eslintConfig": {
     "extends": [
