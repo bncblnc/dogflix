@@ -20,9 +20,7 @@ const Container = styled.div`
 const StyledNav = styled.nav`
   height: 100vh;
   position: fixed;
-  display: flex;
-  align-items: center;
-  top: 0;
+  top: 35%;
   left: 0;
   z-index: 1500;
 

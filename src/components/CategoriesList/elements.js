@@ -52,6 +52,10 @@ export const CategoryList = styled.ul`
   li {
     padding: 1rem 0;
   }
+
+  @media (max-width: ${bpMedium}) {
+    width: 95%;
+  }
 `;
 
 export const CategoryCard = styled.div`
@@ -66,10 +70,6 @@ export const CategoryCard = styled.div`
 
   color: ${grayColorLight__3};
   font-size: 2rem;
-
-  @media (max-width: ${bpMedium}) {
-    width: 95%;
-  }
 `;
 
 export const IconsBox = styled.div`
