@@ -46,7 +46,9 @@
 🐾 Usei o localStorage para que, mesmo recarregando a página, os dados fiquem salvos no navegador.
 </br></br>
 🐾 O site é responsivo:
-</br>
+</br></br>
+<img width="300" src="src/assets/images/gifs/gif-08.gif">
+</br></br>
 <hr>
 <div align="center">
     <a href="https://github.com/bncblnc"><img height="80" src="https://avatars.githubusercontent.com/u/108829137?v=4"></a>
