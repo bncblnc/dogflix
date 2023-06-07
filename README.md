@@ -10,23 +10,41 @@
 </div>
 <h3>🦴 Sobre o DogFlix:</h3>
 🐾 A página inicial apresenta as categorias, sua descrição e um carousel com seus vídeos;
-<img width="600" src="src/assets/gifs/gif-01.gif">
+</br></br>
+<img width="600" src="src/assets/images/gifs/gif-01.gif">
+</br></br>
 🐾 A primeira categoria tem um vídeo em destaque, mostrando seu nome, descrição e, na versão em desktop, o próprio vídeo no background;
-<img width="600" src="src/assets/gifs/gif-02.gif">
+</br></br>
+<img width="600" src="src/assets/images/gifs/gif-02.gif">
+</br></br>
 🐾 Para adicionar um novo vídeo, o formulário faz as validações necessárias além de impedir links inválidos ou repetidos em uma mesma categoria. Também conta com o botão de limpar o formulário; 
-<img width="600" src="src/assets/gifs/gif-03.gif">
+</br></br>
+<img width="600" src="src/assets/images/gifs/gif-03.gif">
+</br></br>
 🐾 Quando o vídeo é adicionado, um modal avisa do sucesso e oferece a opção de redirecionamento para a página do vídeo;
-<img width="600" src="src/assets/gifs/gif-04.gif">
+</br></br>
+<img width="600" src="src/assets/images/gifs/gif-04.gif">
+</br></br>
 🐾 Já na página de nova categoria, além das validações e opção de limpar, temos uma lista com todas categorias já existentes onde é possível:
+</br></br>
 ◽ Editar a categoria:
-<img width="600" src="src/assets/gifs/gif-05.gif">
+</br></br>
+<img width="600" src="src/assets/images/gifs/gif-05.gif">
+</br></br>
 ◽ Visualizar e deletar vídeos da categoria:
-<img width="600" src="src/assets/gifs/gif-06.gif">
+</br></br>
+<img width="600" src="src/assets/images/gifs/gif-06.gif">
+</br></br>
 ◽ Alterar a sequência das categorias (o que altera o vídeo em destaque na home):
-<img width="600" src="src/assets/gifs/gif-07.gif">
+</br></br>
+<img width="600" src="src/assets/images/gifs/gif-07.gif">
+</br></br>
 ◽ Remover a categoria, desde que as sobressalentes tenham vídeos:
-<img width="600" src="src/assets/gifs/gif-08.gif">
+</br></br>
+<img width="600" src="src/assets/images/gifs/gif-08.gif">
+</br></br>
 🐾 Usei o localStorage para que, mesmo recarregando a página, os dados fiquem salvos no navegador.
+</br></br>
 🐾 O site é responsivo:
 </br>
 <hr>
