@@ -45,9 +45,9 @@
 </br></br>
 🐾 Usei o localStorage para que, mesmo recarregando a página, os dados fiquem salvos no navegador.
 </br></br>
-🐾 O site é responsivo:
+🐾 O site é responsivo, com menu para mobile:
 </br></br>
-<img width="300" src="src/assets/images/gifs/gif-08.gif">
+<img width="300" src="src/assets/images/gifs/gif-09.gif">
 </br></br>
 <hr>
 <div align="center">
