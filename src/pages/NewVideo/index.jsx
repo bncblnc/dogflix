@@ -45,6 +45,9 @@ export default function NewVideo({ categoryData, submitFunction }) {
     if (value.replace(/\s/g, "") === "") {
       newError[name] = <Invalid>{label} é obrigatório.</Invalid>;
       setFunction("");
+    } else if (isLink && !value.includes("youtu")) {
+      newError[name] = <Invalid>O vídeo precisa ser do YouTube.</Invalid>;
+      setFunction("");
     } else if (isLink && getYouTubeVideoIdByUrl(value) === null) {
       newError[name] = <Invalid>Link inválido.</Invalid>;
       setFunction("");
