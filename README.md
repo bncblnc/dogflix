@@ -5,7 +5,7 @@
     <p>O objetivo do Challenge foi construir um Netflix customizado (optei pela temática de cachorro).</p>  
     🔸 O usuário pode adicionar, editar e deletar categorias; <br/>
     🔸 O usuário pode adicionar e deletar vídeos na plataforma; <br/>
-    🔸 O site é responsivo.<br/>
+    🔸 O site é responsivo;<br/>
     🔸 Usei o localStorage para que, mesmo recarregando a página, os dados fiquem salvos no navegador.
     <br>
      <h3>💻 TECNOLOGIAS:</h3>
