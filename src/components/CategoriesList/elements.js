@@ -43,15 +43,23 @@ export const ButtonContainer = styled.div`
   gap: 3rem;
 `;
 
-export const CategoryCard = styled.div`
+export const CategoryList = styled.ul`
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
   width: 50%;
-  margin: 2rem auto;
 
+  li {
+    padding: 1rem 0;
+  }
+`;
+
+export const CategoryCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #313131;
   padding: 1rem 2rem;
   border-top: 5px solid;
   border-radius: 0.3rem;

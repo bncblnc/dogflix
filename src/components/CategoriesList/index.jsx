@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdDelete as IconDelete, MdEdit as IconEdit } from "react-icons/md";
 import { Dialog } from "@mui/material";
 import { ButtonPrimary, ButtonSecondary } from "../Button";
@@ -6,7 +6,7 @@ import { FieldContainer, FormStyled, Invalid } from "../Form";
 import TextSmall from "../Form/TextSmall";
 import ColorInput from "../Form/ColorInput";
 import TextLarge from "../Form/TextLarge";
-import { DialogBox, DialogBoxForm, Hyperlink } from "../UI";
+import { DialogBox, DialogBoxForm, Hyperlink, MarginMedium } from "../UI";
 import {
   AlertIcon,
   ButtonContainer,
@@ -20,13 +20,16 @@ import {
   IconDeleteVideo,
   BackHyperLink,
   ErrorIcon,
+  CategoryList,
 } from "./elements";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 export default function CategoriesList({
   data,
   deleteCategory,
   editCategory,
   deleteVideo,
+  sortCategory,
 }) {
   const [categoryClicked, setCategoryClicked] = useState("");
   const [videoClicked, setVideoClicked] = useState("");
@@ -42,6 +45,10 @@ export default function CategoriesList({
   const [color, setColor] = useState("#000000");
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState("");
+
+  const [categoryList, setCategoryList] = useState(data);
+  useEffect(() => sortCategory(categoryList), [categoryList]);
+  useEffect(() => setCategoryList(data), [data]);
 
   function renderInvalid(name, value, setFunction, label) {
     let newError = {};
@@ -107,17 +114,53 @@ export default function CategoriesList({
       );
   }
 
+  function handleOnDragEnd(result) {
+    if (!result.destination) return;
+
+    const items = Array.from(categoryList);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setCategoryList(items);
+  }
+
   return (
     <>
-      {data.map((obj, index) => (
-        <CategoryCard key={index} style={{ borderColor: obj.color }}>
-          {obj.category}
-          <IconsBox>
-            <IconEdit id={obj.category} onClick={handleOpenEdit} />
-            {renderDeleteCategory(obj.category)}
-          </IconsBox>
-        </CategoryCard>
-      ))}
+      <DragDropContext onDragEnd={handleOnDragEnd}>
+        <Droppable droppableId="category-list">
+          {(provided) => (
+            <CategoryList
+              className="category-list"
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {categoryList.map((obj, index) => (
+                <Draggable key={obj.url} draggableId={obj.url} index={index}>
+                  {(provided) => (
+                    <li
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      ref={provided.innerRef}
+                    >
+                      <CategoryCard style={{ borderColor: obj.color }}>
+                        {obj.category}
+                        <IconsBox>
+                          <IconEdit
+                            id={obj.category}
+                            onClick={handleOpenEdit}
+                          />
+                          {renderDeleteCategory(obj.category)}
+                        </IconsBox>
+                      </CategoryCard>
+                    </li>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </CategoryList>
+          )}
+        </Droppable>
+      </DragDropContext>
 
       <Dialog
         open={openAlertCategory}

@@ -29,6 +29,7 @@ export default function NewCategory({
   deleteCategory,
   editCategory,
   deleteVideo,
+  sortCategory,
 }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -117,6 +118,7 @@ export default function NewCategory({
         deleteCategory={deleteCategory}
         editCategory={editCategory}
         deleteVideo={deleteVideo}
+        sortCategory={sortCategory}
       />
       <MarginLarge />
     </main>

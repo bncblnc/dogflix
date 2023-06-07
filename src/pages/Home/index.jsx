@@ -4,30 +4,31 @@ import Carousel from "../../components/Carousel";
 import { MarginMedium } from "../../components/UI";
 
 export default function Home({ categoryData }) {
+  const categoriesToRender = categoryData.filter(
+    (data) => data.videos.length > 0
+  );
+
   return (
     <main>
       <Hero
-        category={categoryData[0].category}
-        description={categoryData[0].description}
-        url={categoryData[0].url}
-        color={categoryData[0].color}
-        videos={categoryData[0].videos}
+        category={categoriesToRender[0].category}
+        description={categoriesToRender[0].description}
+        url={categoriesToRender[0].url}
+        color={categoriesToRender[0].color}
+        videos={categoriesToRender[0].videos}
       />
-      {categoryData
-        .slice(1)
-        .filter((data) => data.videos.length > 0)
-        .map((data, index) => {
-          return (
-            <Carousel
-              key={index}
-              category={data.category}
-              url={data.url}
-              description={data.description}
-              color={data.color}
-              videos={data.videos}
-            />
-          );
-        })}
+      {categoriesToRender.slice(1).map((data, index) => {
+        return (
+          <Carousel
+            key={index}
+            category={data.category}
+            url={data.url}
+            description={data.description}
+            color={data.color}
+            videos={data.videos}
+          />
+        );
+      })}
 
       <MarginMedium />
     </main>

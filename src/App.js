@@ -85,6 +85,10 @@ function App() {
     );
   }
 
+  function sortCategory(newCategoryArray) {
+    setCategoryData(newCategoryArray);
+  }
+
   return (
     <BrowserRouter>
       <GlobalStyle />
@@ -108,6 +112,7 @@ function App() {
                 deleteCategory={deleteCategory}
                 editCategory={editCategory}
                 deleteVideo={deleteVideo}
+                sortCategory={sortCategory}
               />
             }
           />
